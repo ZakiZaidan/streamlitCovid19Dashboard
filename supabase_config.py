@@ -11,6 +11,19 @@ import pandas as pd
 from typing import Optional, Tuple
 
 # Load environment variables
+# 1) Prefer Streamlit secrets (for Streamlit Cloud)
+try:
+    if hasattr(st, "secrets"):
+        for k, v in st.secrets.items():
+            # Skip nested structures; only flat key/value expected
+            if isinstance(v, (dict, list)):
+                continue
+            os.environ[k] = str(v)
+except Exception:
+    # If not on Streamlit, ignore
+    pass
+
+# 2) Fallback to .env (for local development)
 load_dotenv()
 
 class SupabaseConfig:
@@ -38,6 +51,15 @@ class SupabaseConfig:
         
     def validate_config(self) -> bool:
         """Validate that all required configuration is present"""
+        # If connection string is provided, that's sufficient
+        if self.database_url:
+            minimal = [self.url, self.anon_key]
+            missing = [field for field in minimal if not field]
+            if missing:
+                st.error("Missing Supabase URL or ANON key. Please check configuration.")
+                return False
+            return True
+
         required_fields = [
             self.url, self.anon_key, self.db_host, 
             self.db_password, self.db_user
@@ -46,8 +68,8 @@ class SupabaseConfig:
         missing_fields = [field for field in required_fields if not field]
         
         if missing_fields:
-            st.error(f"Missing Supabase configuration. Please check your .env file.")
-            st.info("Required fields: SUPABASE_URL, SUPABASE_ANON_KEY, SUPABASE_DB_HOST, SUPABASE_DB_PASSWORD, SUPABASE_DB_USER")
+            st.error("Missing Supabase configuration. Please check your .env or Streamlit secrets.")
+            st.info("Required fields: SUPABASE_URL, SUPABASE_ANON_KEY, SUPABASE_DB_HOST, SUPABASE_DB_PASSWORD, SUPABASE_DB_USER (or SUPABASE_DATABASE_URL)")
             return False
         
         return True
@@ -66,12 +88,25 @@ class SupabaseConfig:
             st.error(f"Failed to create Supabase client: {e}")
             return None
     
+    def _with_sslmode(self, url: str) -> str:
+        """Ensure connection string enforces SSL"""
+        if not url:
+            return url
+        # If sslmode already present, return as is
+        if "sslmode=" in url:
+            return url
+        # Preserve existing query params
+        if "?" in url:
+            return url + "&sslmode=require"
+        return url + "?sslmode=require"
+
     def get_db_connection(self) -> Optional[psycopg2.extensions.connection]:
         """Create direct PostgreSQL connection to Supabase"""
         try:
             if self.database_url:
-                # Use connection string if available
-                conn = psycopg2.connect(self.database_url)
+                # Use connection string if available and enforce SSL
+                conn_str = self._with_sslmode(self.database_url)
+                conn = psycopg2.connect(conn_str)
             else:
                 # Use individual parameters
                 conn = psycopg2.connect(
