@@ -31,25 +31,33 @@ load_dotenv()
 class SupabaseConfig:
     """Supabase configuration and connection management"""
     
-    def __init__(self):
-        self.url = os.getenv('SUPABASE_URL')
-        self.anon_key = os.getenv('SUPABASE_ANON_KEY')
-        self.service_role_key = os.getenv('SUPABASE_SERVICE_ROLE_KEY')
-        
-        # Database connection details
-        self.db_host = os.getenv('SUPABASE_DB_HOST')
-        self.db_name = os.getenv('SUPABASE_DB_NAME', 'postgres')
-        self.db_user = os.getenv('SUPABASE_DB_USER', 'postgres')
-        self.db_password = os.getenv('SUPABASE_DB_PASSWORD')
-        self.db_port = os.getenv('SUPABASE_DB_PORT', '5432')
-        
-        # Alternative: Use connection string
-        self.database_url = os.getenv('SUPABASE_DATABASE_URL')
-        
-        # App configuration
-        self.app_title = os.getenv('APP_TITLE', 'COVID-19 Indonesia Dashboard')
-        self.cache_ttl = int(os.getenv('CACHE_TTL', '3600'))
-        self.debug_mode = os.getenv('DEBUG_MODE', 'false').lower() == 'true'
+   def __init__(self):
+    self.url = os.getenv('SUPABASE_URL')
+    self.anon_key = os.getenv('SUPABASE_ANON_KEY')
+    self.service_role_key = os.getenv('SUPABASE_SERVICE_ROLE_KEY')
+    
+    # Database connection details
+    self.db_host = os.getenv('SUPABASE_DB_HOST')
+    self.db_name = os.getenv('SUPABASE_DB_NAME', 'postgres')
+    self.db_user = os.getenv('SUPABASE_DB_USER', 'postgres')
+    self.db_password = os.getenv('SUPABASE_DB_PASSWORD')
+    self.db_port = os.getenv('SUPABASE_DB_PORT', '5432')
+    
+    # Alternative: Use connection string
+    self.database_url = os.getenv('SUPABASE_DATABASE_URL')
+    
+    # Debug: Check if secrets are loaded
+    if hasattr(st, 'secrets'):
+        if self.debug_mode:
+            st.write("🔍 Debug: Checking secrets...")
+            st.write(f"SUPABASE_URL: {'✅ Set' if self.url else '❌ Missing'}")
+            st.write(f"SUPABASE_ANON_KEY: {'✅ Set' if self.anon_key else '❌ Missing'}")
+            st.write(f"SUPABASE_DATABASE_URL: {'✅ Set' if self.database_url else '❌ Missing'}")
+    
+    # App configuration
+    self.app_title = os.getenv('APP_TITLE', 'COVID-19 Indonesia Dashboard')
+    self.cache_ttl = int(os.getenv('CACHE_TTL', '3600'))
+    self.debug_mode = os.getenv('DEBUG_MODE', 'false').lower() == 'true'
         
     def validate_config(self) -> bool:
         """Validate that all required configuration is present"""
@@ -102,43 +110,65 @@ class SupabaseConfig:
             return url + "&sslmode=require"
         return url + "?sslmode=require"
     
-    def _get_pooler_connection_string(self) -> Optional[str]:
-        """
-        Get connection string using Supabase connection pooler.
-        Pooler uses port 6543 and is more reliable for serverless environments.
-        Format: postgresql://postgres:[PASSWORD]@[PROJECT_REF].pooler.supabase.com:6543/postgres
-        """
-        if not self.database_url:
-            return None
-        
-        try:
-            # Parse the connection URL
-            parsed = urlparse(self.database_url)
-            
-            # Extract project reference from hostname
-            # Format: db.xbriqveiicnsxpuijsfx.supabase.co
-            hostname = parsed.hostname
-            if not hostname or "supabase.co" not in hostname:
-                return None
-            
-            # Extract project ref (the part between db. and .supabase.co)
-            if hostname.startswith("db."):
-                project_ref = hostname.replace("db.", "").replace(".supabase.co", "")
-            else:
-                return None
-            
-            # Build pooler URL
-            pooler_host = f"{project_ref}.pooler.supabase.com"
-            pooler_url = f"postgresql://{parsed.username}:{parsed.password}@{pooler_host}:6543{parsed.path}"
-            
-            # Ensure sslmode is set
-            pooler_url = self._with_sslmode(pooler_url)
-            
-            return pooler_url
-        except Exception as e:
+    def get_db_connection(self) -> Optional[psycopg2.extensions.connection]:
+    """
+    Create PostgreSQL connection to Supabase.
+    Tries connection pooler first (more reliable for serverless), then direct connection.
+    """
+    last_error = None
+    
+    # Try connection pooler first (better for Streamlit Cloud)
+    if self.database_url:
+        pooler_url = self._get_pooler_connection_string()
+        if pooler_url:
+            try:
+                if self.debug_mode:
+                    st.info("🔄 Trying Supabase connection pooler...")
+                conn = psycopg2.connect(pooler_url, connect_timeout=10)
+                if conn:
+                    if self.debug_mode:
+                        st.success("✅ Connected via pooler!")
+                    return conn
+            except Exception as e:
+                last_error = f"Pooler failed: {str(e)}"
+                if self.debug_mode:
+                    st.warning(f"⚠️ Pooler connection failed: {e}")
+    
+    # Fallback to direct connection
+    try:
+        if self.database_url:
+            conn_str = self._with_sslmode(self.database_url)
             if self.debug_mode:
-                st.warning(f"Failed to build pooler URL: {e}")
-            return None
+                st.info("🔄 Trying direct connection...")
+            conn = self._connect_via_ipv4(conn_str)
+            if conn is None:
+                conn = psycopg2.connect(conn_str, connect_timeout=10)
+            if conn:
+                if self.debug_mode:
+                    st.success("✅ Connected via direct connection!")
+                return conn
+        else:
+            # Use individual parameters
+            conn = psycopg2.connect(
+                host=self.db_host,
+                database=self.db_name,
+                user=self.db_user,
+                password=self.db_password,
+                port=self.db_port,
+                sslmode='require',
+                connect_timeout=10
+            )
+            return conn
+    except Exception as e:
+        last_error = f"Direct connection failed: {str(e)}"
+        if self.debug_mode:
+            st.error(f"❌ Direct connection failed: {e}")
+    
+    # If all failed, show error
+    if last_error and self.debug_mode:
+        st.error(f"❌ All connection attempts failed. Last error: {last_error}")
+    
+    return None
 
     def _connect_via_ipv4(self, dsn_url: str) -> Optional[psycopg2.extensions.connection]:
         """
