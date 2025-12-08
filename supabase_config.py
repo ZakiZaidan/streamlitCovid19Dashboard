@@ -9,6 +9,8 @@ from supabase import create_client, Client
 from dotenv import load_dotenv
 import pandas as pd
 from typing import Optional, Tuple
+import socket
+from urllib.parse import urlparse
 
 # Load environment variables
 # 1) Prefer Streamlit secrets (for Streamlit Cloud)
@@ -100,13 +102,46 @@ class SupabaseConfig:
             return url + "&sslmode=require"
         return url + "?sslmode=require"
 
+    def _connect_via_ipv4(self, dsn_url: str) -> Optional[psycopg2.extensions.connection]:
+        """
+        Attempt to connect forcing IPv4 to avoid IPv6 issues on some platforms.
+        """
+        try:
+            parsed = urlparse(dsn_url)
+            host = parsed.hostname
+            port = parsed.port or 5432
+            user = parsed.username
+            password = parsed.password
+            dbname = (parsed.path or "/postgres").lstrip("/") or "postgres"
+
+            # Resolve only IPv4 addresses
+            addrinfo = socket.getaddrinfo(host, port, family=socket.AF_INET, type=socket.SOCK_STREAM)
+            if not addrinfo:
+                return None
+            ipv4 = addrinfo[0][4][0]
+
+            return psycopg2.connect(
+                host=host,          # keep host for SNI/ssl checks
+                hostaddr=ipv4,      # force IPv4 connection
+                port=port,
+                user=user,
+                password=password,
+                dbname=dbname,
+                sslmode="require",
+            )
+        except Exception:
+            return None
+
     def get_db_connection(self) -> Optional[psycopg2.extensions.connection]:
         """Create direct PostgreSQL connection to Supabase"""
         try:
             if self.database_url:
                 # Use connection string if available and enforce SSL
                 conn_str = self._with_sslmode(self.database_url)
-                conn = psycopg2.connect(conn_str)
+                # Try IPv4-first connection to avoid IPv6 issues
+                conn = self._connect_via_ipv4(conn_str)
+                if conn is None:
+                    conn = psycopg2.connect(conn_str)
             else:
                 # Use individual parameters
                 conn = psycopg2.connect(
