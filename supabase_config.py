@@ -109,6 +109,51 @@ class SupabaseConfig:
             return url + "&sslmode=require"
         return url + "?sslmode=require"
     
+    def _get_pooler_connection_string(self) -> Optional[str]:
+        """
+        Get connection string using Supabase connection pooler.
+        Pooler uses port 6543 and is more reliable for serverless environments.
+        Format: postgresql://postgres:[PASSWORD]@[PROJECT_REF].pooler.supabase.com:6543/postgres
+        """
+        if not self.database_url:
+            return None
+        
+        try:
+            # Parse the connection URL
+            parsed = urlparse(self.database_url)
+            
+            # Extract project reference from hostname
+            # Format: db.xbriqveiicnsxpuijsfx.supabase.co
+            hostname = parsed.hostname
+            if not hostname or "supabase.co" not in hostname:
+                if self.debug_mode:
+                    st.warning("⚠️ Invalid Supabase hostname format")
+                return None
+            
+            # Extract project ref (the part between db. and .supabase.co)
+            if hostname.startswith("db."):
+                project_ref = hostname.replace("db.", "").replace(".supabase.co", "")
+            else:
+                if self.debug_mode:
+                    st.warning(f"⚠️ Hostname doesn't start with 'db.': {hostname}")
+                return None
+            
+            # Build pooler URL
+            pooler_host = f"{project_ref}.pooler.supabase.com"
+            pooler_url = f"postgresql://{parsed.username}:{parsed.password}@{pooler_host}:6543{parsed.path}"
+            
+            # Ensure sslmode is set
+            pooler_url = self._with_sslmode(pooler_url)
+            
+            if self.debug_mode:
+                st.info(f"🔗 Pooler URL: {pooler_host}:6543")
+            
+            return pooler_url
+        except Exception as e:
+            if self.debug_mode:
+                st.warning(f"⚠️ Failed to build pooler URL: {e}")
+            return None
+    
     def _connect_via_ipv4(self, dsn_url: str) -> Optional[psycopg2.extensions.connection]:
         """
         Attempt to connect forcing IPv4 to avoid IPv6 issues on some platforms.
@@ -144,29 +189,40 @@ class SupabaseConfig:
         Create PostgreSQL connection to Supabase.
         Tries connection pooler first (more reliable for serverless), then direct connection.
         """
+        last_error = None
+        
         # Try connection pooler first (better for Streamlit Cloud)
         if self.database_url:
             pooler_url = self._get_pooler_connection_string()
             if pooler_url:
                 try:
                     if self.debug_mode:
-                        st.info("Trying Supabase connection pooler...")
+                        st.info("🔄 Trying Supabase connection pooler...")
                     conn = psycopg2.connect(pooler_url, connect_timeout=10)
                     if conn:
+                        if self.debug_mode:
+                            st.success("✅ Connected via pooler!")
                         return conn
                 except Exception as e:
+                    last_error = f"Pooler: {str(e)}"
                     if self.debug_mode:
-                        st.warning(f"Pooler connection failed: {e}, trying direct connection...")
+                        st.error(f"❌ Pooler connection failed: {e}")
         
         # Fallback to direct connection
         try:
             if self.database_url:
+                if self.debug_mode:
+                    st.info("🔄 Trying direct connection...")
                 # Use connection string if available and enforce SSL
                 conn_str = self._with_sslmode(self.database_url)
                 # Try IPv4-first connection to avoid IPv6 issues
                 conn = self._connect_via_ipv4(conn_str)
                 if conn is None:
                     conn = psycopg2.connect(conn_str, connect_timeout=10)
+                if conn:
+                    if self.debug_mode:
+                        st.success("✅ Connected via direct connection!")
+                    return conn
             else:
                 # Use individual parameters
                 conn = psycopg2.connect(
@@ -178,14 +234,17 @@ class SupabaseConfig:
                     sslmode='require',  # Supabase requires SSL
                     connect_timeout=10
                 )
-            
-            return conn
+                return conn
         except Exception as e:
-            # Don't show error here - let caller handle it
-            # This allows fallback to REST API
+            last_error = f"Direct: {str(e)}"
             if self.debug_mode:
-                st.warning(f"Direct PostgreSQL connection failed: {e}")
-            return None
+                st.error(f"❌ Direct connection failed: {e}")
+        
+        # Show final error if all attempts failed
+        if last_error and self.debug_mode:
+            st.error(f"❌ All connection attempts failed. Last error: {last_error}")
+        
+        return None
     
     def query_via_rest_api(self, query: str) -> Optional[pd.DataFrame]:
         """
@@ -215,20 +274,35 @@ class SupabaseConfig:
     def test_connection(self) -> Tuple[bool, str]:
         """Test database connection"""
         try:
+            if self.debug_mode:
+                st.info("🔍 Testing database connection...")
+            
             conn = self.get_db_connection()
             if not conn:
-                return False, "Failed to establish connection"
+                error_msg = "Failed to establish connection. Check debug messages above for details."
+                if self.debug_mode:
+                    st.error(f"❌ {error_msg}")
+                return False, error_msg
             
             # Test query
+            if self.debug_mode:
+                st.info("🔍 Testing query execution...")
             with conn.cursor() as cur:
                 cur.execute("SELECT version();")
                 version = cur.fetchone()[0]
             
             conn.close()
-            return True, f"Connection successful. PostgreSQL version: {version}"
+            success_msg = f"Connection successful. PostgreSQL version: {version}"
+            if self.debug_mode:
+                st.success(f"✅ {success_msg}")
+            return True, success_msg
             
         except Exception as e:
-            return False, f"Connection test failed: {str(e)}"
+            error_msg = f"Connection test failed: {str(e)}"
+            if self.debug_mode:
+                st.error(f"❌ {error_msg}")
+                st.exception(e)
+            return False, error_msg
     
     def get_connection_info(self) -> dict:
         """Get connection information for display"""
