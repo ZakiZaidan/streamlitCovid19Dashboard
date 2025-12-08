@@ -1,0 +1,22 @@
+# COVID-19 Indonesia Dashboard - Supabase Requirements
+# Core Streamlit and data processing
+streamlit>=1.28.0
+pandas>=1.5.0
+numpy>=1.24.0
+
+# Visualization
+plotly>=5.15.0
+
+# Database connectivity
+psycopg2-binary>=2.9.0
+supabase>=1.0.0
+
+# Environment and configuration
+python-dotenv>=1.0.0
+
+# Utilities
+tqdm>=4.65.0
+
+# Optional: Enhanced data processing
+faker>=19.0.0
+scipy>=1.10.0

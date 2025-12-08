@@ -1,0 +1,263 @@
+id_rumah_sakit,iso_code,nama_rumah_sakit,tipe_rumah_sakit,kelas_rumah_sakit,total_bed,icu_bed,isolation_bed,emergency_bed,ventilator_count,oxygen_capacity,ct_scan_available,pcr_lab_available,doctor_count,nurse_count,specialist_count,latitude,longitude,alamat,covid_referral,operational_status
+1,ID-AC,RS Daerah Aceh 1,Pemerintah,D,23,0,1,1,1,345,False,False,5,20,2,-10.459694,99.309981,"Jl. Kesehatan No. 78, Aceh",True,Aktif
+2,ID-AC,RS Swasta Aceh 2,Swasta,A,587,35,96,45,31,8218,True,True,91,650,38,-8.285792,114.440262,"Jl. Kesehatan No. 98, Aceh",False,Aktif
+3,ID-AC,RS TNI Aceh 3,Pemerintah,D,23,0,0,2,1,115,False,False,5,20,2,-4.564916,120.393869,"Jl. Kesehatan No. 74, Aceh",True,Aktif
+4,ID-AC,RS Swasta Aceh 4,Swasta,A,660,35,109,58,41,5280,True,False,180,505,60,3.179877,102.482088,"Jl. Kesehatan No. 90, Aceh",True,Tutup Sementara
+5,ID-AC,RS Umum Aceh 5,Swasta,B,193,10,18,14,9,2895,False,False,45,126,13,2.061331,97.573146,"Jl. Kesehatan No. 35, Aceh",True,Aktif
+6,ID-AC,RS TNI Aceh 6,Pemerintah,B,204,15,24,17,13,2448,False,False,36,232,12,-6.497037,106.344865,"Jl. Kesehatan No. 75, Aceh",False,Aktif
+7,ID-AC,RS Bhayangkara Aceh 7,Swasta,B,242,9,36,18,7,1210,False,False,65,146,16,0.568181,122.434815,"Jl. Kesehatan No. 68, Aceh",False,Aktif
+8,ID-AC,RS Umum Aceh 8,Pemerintah,B,291,21,23,25,22,3783,False,True,72,302,21,-6.010498,102.275257,"Jl. Kesehatan No. 65, Aceh",True,Aktif
+9,ID-SU,RS Swasta Sumatera Utara 1,Swasta,C,131,4,7,8,3,1703,False,True,37,120,12,-9.098249,111.697115,"Jl. Kesehatan No. 8, Sumatera Utara",True,Aktif
+10,ID-SU,RS TNI Sumatera Utara 2,Swasta,B,295,22,25,21,18,3835,False,True,74,174,25,-1.653339,107.192605,"Jl. Kesehatan No. 70, Sumatera Utara",True,Aktif
+11,ID-SU,RS TNI Sumatera Utara 3,Swasta,A,665,43,132,54,41,8645,True,True,126,447,27,-10.642418,120.48039,"Jl. Kesehatan No. 10, Sumatera Utara",True,Aktif
+12,ID-SU,RS Bhayangkara Sumatera Utara 4,TNI/Polri,C,79,1,4,5,1,711,False,True,18,51,4,4.903742,121.267982,"Jl. Kesehatan No. 61, Sumatera Utara",False,Aktif
+13,ID-SU,RS Umum Sumatera Utara 5,Pemerintah,A,397,21,65,26,20,1985,True,True,93,471,21,-4.155438,110.60792,"Jl. Kesehatan No. 25, Sumatera Utara",False,Aktif
+14,ID-SU,RS Umum Sumatera Utara 6,Swasta,A,371,26,47,23,30,4452,True,True,97,407,22,0.086463,119.867045,"Jl. Kesehatan No. 22, Sumatera Utara",False,Aktif
+15,ID-SU,RS TNI Sumatera Utara 7,Pemerintah,D,35,0,2,3,1,175,False,False,10,23,4,-3.264858,114.458344,"Jl. Kesehatan No. 92, Sumatera Utara",False,Aktif
+16,ID-SU,RS Daerah Sumatera Utara 8,Swasta,B,189,7,18,10,7,945,True,True,47,102,17,-2.451543,134.225115,"Jl. Kesehatan No. 24, Sumatera Utara",True,Aktif
+17,ID-SU,RS TNI Sumatera Utara 9,Swasta,A,604,32,112,42,37,8456,False,False,90,553,34,-3.873176,121.848925,"Jl. Kesehatan No. 27, Sumatera Utara",False,Tutup Sementara
+18,ID-SU,RS TNI Sumatera Utara 10,Swasta,C,80,2,4,6,1,480,False,False,8,74,2,-9.300319,119.731183,"Jl. Kesehatan No. 17, Sumatera Utara",False,Aktif
+19,ID-SU,RS Swasta Sumatera Utara 11,Swasta,C,58,2,3,3,2,522,False,False,12,69,4,-10.867007,132.58679,"Jl. Kesehatan No. 14, Sumatera Utara",True,Aktif
+20,ID-SU,RS Swasta Sumatera Utara 12,Pemerintah,A,435,24,48,33,21,6090,True,True,61,321,24,3.499518,118.248817,"Jl. Kesehatan No. 82, Sumatera Utara",False,Aktif
+21,ID-SB,RS Daerah Sumatera Barat 1,Pemerintah,B,161,4,21,13,3,1932,True,False,33,128,6,-9.720854,135.622894,"Jl. Kesehatan No. 75, Sumatera Barat",True,Aktif
+22,ID-SB,RS Bhayangkara Sumatera Barat 2,Pemerintah,B,260,9,26,24,10,1300,True,True,72,168,19,-9.252508,130.885347,"Jl. Kesehatan No. 21, Sumatera Barat",True,Aktif
+23,ID-SB,RS Umum Sumatera Barat 3,Pemerintah,D,48,0,1,4,1,528,False,False,12,53,5,-6.464303,131.219227,"Jl. Kesehatan No. 5, Sumatera Barat",False,Aktif
+24,ID-SB,RS Swasta Sumatera Barat 4,BUMN,C,78,2,7,5,2,624,False,False,11,75,3,-6.263748,98.193355,"Jl. Kesehatan No. 83, Sumatera Barat",False,Aktif
+25,ID-SB,RS Swasta Sumatera Barat 5,Pemerintah,D,41,1,2,3,1,369,False,False,5,48,2,-9.157157,114.989933,"Jl. Kesehatan No. 78, Sumatera Barat",True,Aktif
+26,ID-SB,RS Swasta Sumatera Barat 6,Swasta,C,99,4,5,5,3,1287,False,False,28,86,11,1.613151,125.848911,"Jl. Kesehatan No. 9, Sumatera Barat",False,Aktif
+27,ID-SB,RS Bhayangkara Sumatera Barat 7,Pemerintah,B,230,14,20,21,14,3450,True,False,41,179,11,-8.836107,114.340531,"Jl. Kesehatan No. 52, Sumatera Barat",True,Aktif
+28,ID-SB,RS Daerah Sumatera Barat 8,Swasta,B,227,10,24,17,10,2724,True,False,42,220,14,2.493502,139.152272,"Jl. Kesehatan No. 66, Sumatera Barat",False,Aktif
+29,ID-SB,RS Bhayangkara Sumatera Barat 9,Pemerintah,B,173,12,22,14,10,1384,False,True,22,92,10,-0.608342,130.35051,"Jl. Kesehatan No. 92, Sumatera Barat",False,Aktif
+30,ID-SB,RS TNI Sumatera Barat 10,Swasta,C,113,3,6,9,3,678,False,True,28,73,12,0.8305,116.369295,"Jl. Kesehatan No. 16, Sumatera Barat",False,Aktif
+31,ID-SB,RS Daerah Sumatera Barat 11,Pemerintah,C,67,2,5,6,2,804,False,False,14,67,4,3.119676,120.20211,"Jl. Kesehatan No. 61, Sumatera Barat",False,Aktif
+32,ID-SB,RS Swasta Sumatera Barat 12,Swasta,C,83,3,7,5,3,996,False,False,18,57,4,-6.142621,107.498895,"Jl. Kesehatan No. 11, Sumatera Barat",True,Aktif
+33,ID-RI,RS TNI Riau 1,Swasta,B,209,10,18,12,9,2090,True,False,43,165,11,-3.85756,136.62257,"Jl. Kesehatan No. 62, Riau",True,Aktif
+34,ID-RI,RS Swasta Riau 2,Pemerintah,A,782,52,137,72,61,8602,False,False,162,793,71,4.262793,117.458556,"Jl. Kesehatan No. 4, Riau",False,Aktif
+35,ID-RI,RS Umum Riau 3,Pemerintah,C,93,3,8,8,3,651,False,False,27,81,12,-0.937823,125.497989,"Jl. Kesehatan No. 55, Riau",True,Tutup Sementara
+36,ID-RI,RS Umum Riau 4,Pemerintah,C,109,2,6,7,1,1090,False,False,27,83,11,3.142713,106.60449,"Jl. Kesehatan No. 3, Riau",True,Aktif
+37,ID-JA,RS TNI Jambi 1,Pemerintah,A,414,34,73,34,37,3312,True,False,57,212,14,-8.854243,125.795107,"Jl. Kesehatan No. 90, Jambi",False,Aktif
+38,ID-JA,RS Bhayangkara Jambi 2,Pemerintah,D,44,0,2,4,1,308,False,False,12,25,2,-5.696727,126.157975,"Jl. Kesehatan No. 92, Jambi",True,Aktif
+39,ID-JA,RS Swasta Jambi 3,Swasta,C,59,2,5,3,2,531,False,False,15,54,3,5.725354,131.001226,"Jl. Kesehatan No. 55, Jambi",False,Aktif
+40,ID-JA,RS Daerah Jambi 4,Pemerintah,D,22,0,1,2,1,132,False,False,5,16,2,-3.184431,102.037593,"Jl. Kesehatan No. 67, Jambi",False,Aktif
+41,ID-JA,RS Daerah Jambi 5,Swasta,C,128,5,9,9,4,1792,False,False,19,140,8,-9.526731,135.555034,"Jl. Kesehatan No. 73, Jambi",False,Aktif
+42,ID-SS,RS Daerah Sumatera Selatan 1,Pemerintah,B,157,8,16,11,7,1413,True,True,26,175,10,-6.303434,95.466951,"Jl. Kesehatan No. 93, Sumatera Selatan",False,Aktif
+43,ID-SS,RS TNI Sumatera Selatan 2,Swasta,C,112,4,6,8,4,1344,False,False,28,63,7,0.760382,109.085477,"Jl. Kesehatan No. 61, Sumatera Selatan",False,Aktif
+44,ID-SS,RS Daerah Sumatera Selatan 3,Swasta,B,258,20,30,17,19,2322,True,True,38,150,9,-8.967569,119.649742,"Jl. Kesehatan No. 95, Sumatera Selatan",False,Aktif
+45,ID-SS,RS Daerah Sumatera Selatan 4,Pemerintah,B,220,14,32,16,12,1320,False,True,58,155,17,-5.861451,127.56885,"Jl. Kesehatan No. 7, Sumatera Selatan",False,Tutup Sementara
+46,ID-SS,RS Bhayangkara Sumatera Selatan 5,Pemerintah,C,139,6,11,12,5,695,False,True,29,115,9,-7.865818,97.363329,"Jl. Kesehatan No. 9, Sumatera Selatan",False,Aktif
+47,ID-SS,RS TNI Sumatera Selatan 6,Pemerintah,D,35,0,2,1,1,490,False,False,10,19,2,-1.512758,114.144005,"Jl. Kesehatan No. 29, Sumatera Selatan",False,Tutup Sementara
+48,ID-SS,RS Daerah Sumatera Selatan 7,Pemerintah,C,107,5,6,8,4,1498,False,False,23,99,9,5.109033,104.558244,"Jl. Kesehatan No. 85, Sumatera Selatan",True,Aktif
+49,ID-SS,RS Umum Sumatera Selatan 8,Pemerintah,A,380,23,58,21,22,5320,True,False,73,198,20,-6.193788,134.54191,"Jl. Kesehatan No. 81, Sumatera Selatan",True,Aktif
+50,ID-SS,RS Swasta Sumatera Selatan 9,Swasta,A,517,28,63,29,25,3619,False,True,59,318,17,1.732281,121.183524,"Jl. Kesehatan No. 60, Sumatera Selatan",False,Aktif
+51,ID-SS,RS TNI Sumatera Selatan 10,TNI/Polri,B,253,19,29,18,15,1265,True,False,70,256,26,-10.560297,105.530523,"Jl. Kesehatan No. 74, Sumatera Selatan",True,Aktif
+52,ID-SS,RS Bhayangkara Sumatera Selatan 11,Swasta,C,147,6,10,12,6,1029,False,False,44,118,19,5.473939,116.620478,"Jl. Kesehatan No. 42, Sumatera Selatan",True,Aktif
+53,ID-SS,RS TNI Sumatera Selatan 12,Swasta,C,70,2,5,4,2,910,False,True,7,39,2,-9.029333,130.537205,"Jl. Kesehatan No. 85, Sumatera Selatan",False,Aktif
+54,ID-SS,RS Bhayangkara Sumatera Selatan 13,Swasta,B,255,8,29,20,7,3060,True,True,64,163,23,4.770437,115.15334,"Jl. Kesehatan No. 81, Sumatera Selatan",True,Aktif
+55,ID-BE,RS TNI Bengkulu 1,Swasta,B,190,8,15,13,7,1140,False,False,36,110,16,-2.527616,127.963753,"Jl. Kesehatan No. 62, Bengkulu",False,Aktif
+56,ID-BE,RS TNI Bengkulu 2,Swasta,B,212,11,19,12,11,1484,False,True,57,146,24,-3.945979,137.975426,"Jl. Kesehatan No. 37, Bengkulu",False,Aktif
+57,ID-BE,RS Daerah Bengkulu 3,Pemerintah,C,125,4,10,11,3,1500,False,False,21,110,7,-3.259142,109.801758,"Jl. Kesehatan No. 31, Bengkulu",False,Aktif
+58,ID-BE,RS Umum Bengkulu 4,Pemerintah,C,79,3,5,5,2,869,False,True,14,76,6,5.673908,117.785118,"Jl. Kesehatan No. 65, Bengkulu",False,Aktif
+59,ID-BE,RS Swasta Bengkulu 5,Swasta,A,745,40,137,40,46,3725,False,False,182,586,72,-8.375859,116.596568,"Jl. Kesehatan No. 84, Bengkulu",True,Aktif
+60,ID-BE,RS Swasta Bengkulu 6,Pemerintah,D,47,0,2,3,1,705,False,True,11,48,5,-10.389715,98.147354,"Jl. Kesehatan No. 96, Bengkulu",True,Aktif
+61,ID-BE,RS Swasta Bengkulu 7,Pemerintah,B,261,20,34,22,16,1827,False,True,62,295,13,2.534439,108.494918,"Jl. Kesehatan No. 32, Bengkulu",False,Tutup Sementara
+62,ID-BE,RS Swasta Bengkulu 8,TNI/Polri,B,294,18,27,17,18,3234,False,False,65,196,30,-8.566999,116.212896,"Jl. Kesehatan No. 86, Bengkulu",True,Aktif
+63,ID-LA,RS Bhayangkara Lampung 1,Swasta,B,223,14,20,16,13,3122,False,True,35,261,14,-3.233791,108.897597,"Jl. Kesehatan No. 31, Lampung",False,Aktif
+64,ID-LA,RS TNI Lampung 2,Pemerintah,A,592,40,76,50,32,8880,False,False,106,299,48,2.231297,139.78573,"Jl. Kesehatan No. 100, Lampung",True,Aktif
+65,ID-LA,RS Bhayangkara Lampung 3,TNI/Polri,B,240,9,22,15,9,3600,True,False,56,142,12,-0.333212,96.813438,"Jl. Kesehatan No. 94, Lampung",True,Aktif
+66,ID-LA,RS Bhayangkara Lampung 4,Pemerintah,C,61,2,4,4,1,793,False,False,16,46,5,-6.367035,102.569043,"Jl. Kesehatan No. 96, Lampung",False,Aktif
+67,ID-LA,RS Bhayangkara Lampung 5,TNI/Polri,C,64,2,3,5,1,960,False,True,15,75,7,2.67799,111.825652,"Jl. Kesehatan No. 34, Lampung",True,Aktif
+68,ID-LA,RS TNI Lampung 6,Pemerintah,B,266,12,35,16,11,3990,False,True,76,153,20,-10.574581,135.674803,"Jl. Kesehatan No. 83, Lampung",True,Aktif
+69,ID-BB,RS Daerah Kepulauan Bangka Belitung 1,Swasta,A,721,52,122,59,44,3605,False,False,208,514,72,-9.347736,135.813928,"Jl. Kesehatan No. 48, Kepulauan Bangka Belitung",False,Aktif
+70,ID-BB,RS Bhayangkara Kepulauan Bangka Belitung 2,Swasta,A,600,52,69,42,43,7200,True,False,133,694,37,0.734771,104.994405,"Jl. Kesehatan No. 13, Kepulauan Bangka Belitung",False,Aktif
+71,ID-BB,RS Umum Kepulauan Bangka Belitung 3,Swasta,B,289,21,36,15,19,1734,True,False,83,311,18,-7.394201,124.416674,"Jl. Kesehatan No. 32, Kepulauan Bangka Belitung",True,Aktif
+72,ID-BB,RS Swasta Kepulauan Bangka Belitung 4,Pemerintah,C,150,5,8,13,4,1200,False,True,39,99,16,2.406944,122.415155,"Jl. Kesehatan No. 17, Kepulauan Bangka Belitung",False,Aktif
+73,ID-BB,RS Umum Kepulauan Bangka Belitung 5,Pemerintah,C,72,1,6,4,1,576,False,False,15,36,4,-8.845105,114.364186,"Jl. Kesehatan No. 9, Kepulauan Bangka Belitung",False,Aktif
+74,ID-BB,RS Umum Kepulauan Bangka Belitung 6,Swasta,B,264,18,30,14,18,3696,True,False,28,276,12,-2.135329,116.069956,"Jl. Kesehatan No. 52, Kepulauan Bangka Belitung",False,Aktif
+75,ID-BB,RS Bhayangkara Kepulauan Bangka Belitung 7,Pemerintah,B,177,9,25,9,7,2478,False,False,22,104,8,-1.0488,127.759029,"Jl. Kesehatan No. 65, Kepulauan Bangka Belitung",False,Aktif
+76,ID-BB,RS Bhayangkara Kepulauan Bangka Belitung 8,Pemerintah,D,23,0,0,1,1,299,False,False,5,14,2,-7.115609,110.590854,"Jl. Kesehatan No. 54, Kepulauan Bangka Belitung",True,Aktif
+77,ID-KR,RS Daerah Kepulauan Riau 1,TNI/Polri,B,259,11,25,25,11,3108,True,False,29,280,6,-9.358405,128.984616,"Jl. Kesehatan No. 86, Kepulauan Riau",True,Aktif
+78,ID-KR,RS Bhayangkara Kepulauan Riau 2,Swasta,B,255,12,32,22,13,1275,True,True,74,234,22,-1.175385,104.785985,"Jl. Kesehatan No. 45, Kepulauan Riau",False,Aktif
+79,ID-KR,RS Swasta Kepulauan Riau 3,Pemerintah,C,64,2,5,5,2,896,False,True,14,60,2,4.794433,133.155196,"Jl. Kesehatan No. 24, Kepulauan Riau",False,Aktif
+80,ID-KR,RS TNI Kepulauan Riau 4,Pemerintah,C,139,5,13,9,4,973,False,True,29,108,7,-0.236076,96.410227,"Jl. Kesehatan No. 49, Kepulauan Riau",False,Aktif
+81,ID-KR,RS Umum Kepulauan Riau 5,TNI/Polri,C,108,3,7,9,3,1512,False,False,23,120,5,1.82541,97.289075,"Jl. Kesehatan No. 57, Kepulauan Riau",False,Tutup Sementara
+82,ID-JK,RS Daerah DKI Jakarta 1,Pemerintah,A,610,43,77,53,36,6710,False,True,74,594,27,-2.04212,109.187292,"Jl. Kesehatan No. 1, DKI Jakarta",True,Tutup Sementara
+83,ID-JK,RS TNI DKI Jakarta 2,Swasta,C,88,4,7,7,3,528,False,False,8,90,2,-4.536473,127.368878,"Jl. Kesehatan No. 86, DKI Jakarta",False,Tutup Sementara
+84,ID-JK,RS Umum DKI Jakarta 3,TNI/Polri,B,168,8,22,12,7,1008,False,True,45,151,16,1.061482,114.213922,"Jl. Kesehatan No. 42, DKI Jakarta",True,Aktif
+85,ID-JK,RS Daerah DKI Jakarta 4,TNI/Polri,B,267,19,38,14,21,2136,False,True,49,208,10,3.798915,129.307022,"Jl. Kesehatan No. 10, DKI Jakarta",True,Aktif
+86,ID-JK,RS Umum DKI Jakarta 5,Swasta,C,117,4,11,7,4,1755,False,True,30,77,7,-7.646379,122.710353,"Jl. Kesehatan No. 99, DKI Jakarta",False,Aktif
+87,ID-JK,RS Bhayangkara DKI Jakarta 6,Swasta,A,537,47,94,38,54,7518,True,False,122,639,36,5.506542,109.542389,"Jl. Kesehatan No. 57, DKI Jakarta",False,Aktif
+88,ID-JK,RS Umum DKI Jakarta 7,BUMN,A,707,45,74,53,41,8484,False,False,76,535,21,-0.04067,139.958952,"Jl. Kesehatan No. 75, DKI Jakarta",True,Aktif
+89,ID-JK,RS Umum DKI Jakarta 8,TNI/Polri,C,107,5,8,6,5,1391,False,False,13,58,3,4.285156,110.798138,"Jl. Kesehatan No. 83, DKI Jakarta",True,Aktif
+90,ID-JK,RS Umum DKI Jakarta 9,Swasta,B,160,6,17,11,6,1120,False,True,27,182,8,2.165901,126.229295,"Jl. Kesehatan No. 43, DKI Jakarta",True,Aktif
+91,ID-JK,RS Bhayangkara DKI Jakarta 10,Swasta,C,121,4,7,10,4,1694,False,True,33,88,12,-8.595718,111.091756,"Jl. Kesehatan No. 77, DKI Jakarta",True,Aktif
+92,ID-JK,RS Swasta DKI Jakarta 11,TNI/Polri,B,229,13,28,15,11,3435,True,True,64,129,25,-2.355696,95.838605,"Jl. Kesehatan No. 44, DKI Jakarta",False,Aktif
+93,ID-JK,RS TNI DKI Jakarta 12,Swasta,B,199,8,17,10,9,1194,True,False,40,174,16,-2.048962,125.448745,"Jl. Kesehatan No. 20, DKI Jakarta",True,Aktif
+94,ID-JK,RS Bhayangkara DKI Jakarta 13,Swasta,C,73,3,6,6,2,876,False,True,7,55,2,5.483006,123.087389,"Jl. Kesehatan No. 69, DKI Jakarta",True,Aktif
+95,ID-JK,RS TNI DKI Jakarta 14,Pemerintah,A,458,45,81,43,39,6870,False,True,132,544,44,-6.209881,112.566132,"Jl. Kesehatan No. 26, DKI Jakarta",True,Aktif
+96,ID-JK,RS Daerah DKI Jakarta 15,Pemerintah,C,82,1,6,5,1,1066,False,False,22,57,9,-6.362548,136.644086,"Jl. Kesehatan No. 12, DKI Jakarta",True,Aktif
+97,ID-JK,RS Swasta DKI Jakarta 16,Pemerintah,C,107,4,10,7,3,1070,False,True,15,127,4,-10.520812,137.817992,"Jl. Kesehatan No. 18, DKI Jakarta",True,Aktif
+98,ID-JK,RS TNI DKI Jakarta 17,Pemerintah,D,29,0,1,2,1,348,False,False,5,14,2,-6.649293,133.408303,"Jl. Kesehatan No. 78, DKI Jakarta",False,Aktif
+99,ID-JK,RS Umum DKI Jakarta 18,Pemerintah,C,64,2,3,3,1,960,False,False,16,52,3,4.387497,122.449996,"Jl. Kesehatan No. 66, DKI Jakarta",True,Aktif
+100,ID-JK,RS TNI DKI Jakarta 19,Pemerintah,C,141,3,10,11,2,1551,False,False,19,136,6,-4.869736,138.856569,"Jl. Kesehatan No. 65, DKI Jakarta",True,Aktif
+101,ID-JK,RS TNI DKI Jakarta 20,Pemerintah,C,99,4,5,6,3,495,False,False,16,54,4,0.170775,99.768538,"Jl. Kesehatan No. 97, DKI Jakarta",False,Aktif
+102,ID-JK,RS Bhayangkara DKI Jakarta 21,Swasta,C,67,1,5,6,1,1005,False,True,12,66,4,2.795461,97.902625,"Jl. Kesehatan No. 38, DKI Jakarta",True,Tutup Sementara
+103,ID-JK,RS Swasta DKI Jakarta 22,Swasta,B,161,11,22,10,10,1771,True,False,47,141,12,1.805946,103.790758,"Jl. Kesehatan No. 35, DKI Jakarta",True,Aktif
+104,ID-JB,RS Bhayangkara Jawa Barat 1,Pemerintah,C,105,4,9,9,3,735,False,True,20,89,9,-2.17231,131.852812,"Jl. Kesehatan No. 56, Jawa Barat",True,Aktif
+105,ID-JB,RS Swasta Jawa Barat 2,Pemerintah,D,37,0,1,2,1,444,False,False,8,29,3,-5.023701,96.948337,"Jl. Kesehatan No. 56, Jawa Barat",False,Aktif
+106,ID-JB,RS Daerah Jawa Barat 3,Swasta,B,164,5,20,11,5,2460,True,True,21,85,9,0.527511,115.15595,"Jl. Kesehatan No. 100, Jawa Barat",False,Aktif
+107,ID-JB,RS Swasta Jawa Barat 4,Pemerintah,B,242,11,28,19,11,2420,True,True,42,250,15,-1.999182,113.309566,"Jl. Kesehatan No. 4, Jawa Barat",True,Aktif
+108,ID-JB,RS Daerah Jawa Barat 5,Swasta,B,277,15,39,15,16,3324,True,False,39,257,15,5.97669,104.208204,"Jl. Kesehatan No. 23, Jawa Barat",False,Aktif
+109,ID-JB,RS Daerah Jawa Barat 6,BUMN,C,61,2,6,6,2,366,False,False,12,42,3,-8.322411,127.639934,"Jl. Kesehatan No. 66, Jawa Barat",True,Aktif
+110,ID-JB,RS Umum Jawa Barat 7,Swasta,B,181,14,24,11,13,1810,True,False,38,137,16,-1.622002,123.149625,"Jl. Kesehatan No. 51, Jawa Barat",False,Aktif
+111,ID-JB,RS TNI Jawa Barat 8,Pemerintah,C,117,3,8,9,2,1170,False,False,26,95,10,-5.143249,135.386167,"Jl. Kesehatan No. 76, Jawa Barat",True,Aktif
+112,ID-JB,RS TNI Jawa Barat 9,Pemerintah,A,693,68,99,66,55,4158,False,True,141,494,35,4.890543,105.371633,"Jl. Kesehatan No. 33, Jawa Barat",True,Aktif
+113,ID-JB,RS TNI Jawa Barat 10,TNI/Polri,C,131,6,8,10,6,786,False,False,26,80,12,-8.378697,125.301712,"Jl. Kesehatan No. 73, Jawa Barat",True,Aktif
+114,ID-JB,RS Swasta Jawa Barat 11,Pemerintah,C,53,1,5,4,1,424,False,False,13,41,5,-2.533353,123.849544,"Jl. Kesehatan No. 39, Jawa Barat",False,Aktif
+115,ID-JB,RS Swasta Jawa Barat 12,Pemerintah,C,81,3,6,5,2,405,False,False,10,64,3,-5.216726,101.60876,"Jl. Kesehatan No. 45, Jawa Barat",False,Aktif
+116,ID-JB,RS TNI Jawa Barat 13,Swasta,B,183,12,21,10,10,1098,False,True,28,123,6,-6.066396,112.670892,"Jl. Kesehatan No. 21, Jawa Barat",False,Aktif
+117,ID-JB,RS Daerah Jawa Barat 14,Pemerintah,C,123,5,7,7,5,1476,False,True,24,88,4,5.068958,118.250445,"Jl. Kesehatan No. 75, Jawa Barat",False,Aktif
+118,ID-JB,RS Swasta Jawa Barat 15,TNI/Polri,B,162,5,18,15,5,1944,False,False,25,81,5,-8.723106,107.165753,"Jl. Kesehatan No. 6, Jawa Barat",False,Aktif
+119,ID-JB,RS Daerah Jawa Barat 16,Pemerintah,C,56,2,3,4,1,728,False,True,10,49,4,-0.404893,123.107984,"Jl. Kesehatan No. 51, Jawa Barat",False,Aktif
+120,ID-JB,RS Bhayangkara Jawa Barat 17,Swasta,C,93,3,6,5,3,1023,False,True,18,49,4,-5.338308,116.792231,"Jl. Kesehatan No. 78, Jawa Barat",True,Aktif
+121,ID-JB,RS Bhayangkara Jawa Barat 18,Pemerintah,C,91,4,5,6,4,819,False,True,19,77,6,-2.672607,120.894516,"Jl. Kesehatan No. 48, Jawa Barat",False,Aktif
+122,ID-JB,RS TNI Jawa Barat 19,Swasta,C,136,3,9,8,3,2040,False,True,14,113,6,2.309368,130.703453,"Jl. Kesehatan No. 93, Jawa Barat",True,Aktif
+123,ID-JB,RS Umum Jawa Barat 20,BUMN,C,124,4,9,10,4,1364,False,False,16,121,3,5.119488,100.055194,"Jl. Kesehatan No. 41, Jawa Barat",False,Aktif
+124,ID-JT,RS Bhayangkara Jawa Tengah 1,Pemerintah,B,255,16,27,22,18,1275,False,True,61,220,22,5.968089,117.005065,"Jl. Kesehatan No. 59, Jawa Tengah",False,Aktif
+125,ID-JT,RS Swasta Jawa Tengah 2,Pemerintah,C,119,3,10,10,3,1071,False,False,26,75,7,-1.512527,105.343884,"Jl. Kesehatan No. 91, Jawa Tengah",True,Aktif
+126,ID-JT,RS Swasta Jawa Tengah 3,Pemerintah,D,42,1,1,2,1,378,False,True,6,37,2,4.227928,113.148493,"Jl. Kesehatan No. 38, Jawa Tengah",True,Aktif
+127,ID-JT,RS Umum Jawa Tengah 4,Swasta,B,223,17,19,21,18,2676,True,True,31,240,8,-1.445694,107.494587,"Jl. Kesehatan No. 7, Jawa Tengah",True,Aktif
+128,ID-JT,RS Bhayangkara Jawa Tengah 5,Swasta,B,209,6,22,17,5,1463,False,True,21,185,10,-4.082573,138.011477,"Jl. Kesehatan No. 97, Jawa Tengah",False,Aktif
+129,ID-JT,RS Daerah Jawa Tengah 6,Swasta,C,91,2,4,8,2,728,False,True,18,91,8,4.524905,103.05298,"Jl. Kesehatan No. 51, Jawa Tengah",False,Aktif
+130,ID-JT,RS TNI Jawa Tengah 7,Pemerintah,C,73,3,7,7,3,365,False,False,11,67,5,-5.304284,115.900058,"Jl. Kesehatan No. 64, Jawa Tengah",True,Aktif
+131,ID-JT,RS Daerah Jawa Tengah 8,BUMN,B,279,14,26,15,12,3348,True,False,64,279,13,-5.269093,108.571116,"Jl. Kesehatan No. 55, Jawa Tengah",False,Aktif
+132,ID-JT,RS TNI Jawa Tengah 9,Swasta,B,172,8,14,17,7,1376,True,False,17,132,5,-6.461096,110.162764,"Jl. Kesehatan No. 84, Jawa Tengah",False,Tutup Sementara
+133,ID-JT,RS Swasta Jawa Tengah 10,TNI/Polri,B,210,6,18,13,5,2730,False,True,59,235,25,0.734936,124.380721,"Jl. Kesehatan No. 29, Jawa Tengah",True,Aktif
+134,ID-JT,RS TNI Jawa Tengah 11,Swasta,A,544,31,95,43,29,7072,True,False,153,560,67,3.03526,130.045543,"Jl. Kesehatan No. 68, Jawa Tengah",False,Tutup Sementara
+135,ID-JT,RS Daerah Jawa Tengah 12,Swasta,C,59,2,3,5,2,472,False,False,12,35,3,-2.154194,100.347041,"Jl. Kesehatan No. 75, Jawa Tengah",False,Aktif
+136,ID-JT,RS Bhayangkara Jawa Tengah 13,TNI/Polri,B,173,12,19,9,10,1903,False,True,33,93,11,2.717561,128.270884,"Jl. Kesehatan No. 96, Jawa Tengah",True,Aktif
+137,ID-JT,RS Daerah Jawa Tengah 14,TNI/Polri,A,596,31,84,50,31,2980,False,False,171,326,82,-10.460507,113.807879,"Jl. Kesehatan No. 49, Jawa Tengah",False,Aktif
+138,ID-JT,RS Daerah Jawa Tengah 15,BUMN,C,98,3,8,8,3,1470,False,True,26,57,12,-4.318003,100.857966,"Jl. Kesehatan No. 97, Jawa Tengah",True,Aktif
+139,ID-JT,RS Umum Jawa Tengah 16,Swasta,B,226,12,29,16,11,1808,True,False,33,167,9,4.935976,128.351102,"Jl. Kesehatan No. 79, Jawa Tengah",True,Aktif
+140,ID-JT,RS Umum Jawa Tengah 17,Pemerintah,C,80,2,4,4,2,400,False,True,11,42,3,-1.824083,129.701743,"Jl. Kesehatan No. 65, Jawa Tengah",False,Aktif
+141,ID-YO,RS Umum Yogyakarta 1,Swasta,C,143,5,11,12,5,1144,False,False,22,85,8,-7.242273,108.823044,"Jl. Kesehatan No. 76, Yogyakarta",True,Aktif
+142,ID-YO,RS Bhayangkara Yogyakarta 2,Swasta,A,620,52,96,32,48,9300,True,False,145,651,42,-3.922481,101.86401,"Jl. Kesehatan No. 31, Yogyakarta",True,Aktif
+143,ID-YO,RS Umum Yogyakarta 3,Swasta,C,88,4,5,6,3,968,False,False,25,78,6,-6.871405,104.35349,"Jl. Kesehatan No. 48, Yogyakarta",True,Aktif
+144,ID-YO,RS Daerah Yogyakarta 4,Pemerintah,B,287,19,26,18,20,4018,False,True,30,158,13,-1.011077,125.886724,"Jl. Kesehatan No. 43, Yogyakarta",False,Aktif
+145,ID-JI,RS Swasta Jawa Timur 1,Swasta,A,408,39,80,22,46,4896,False,False,115,402,47,-4.257255,106.009224,"Jl. Kesehatan No. 60, Jawa Timur",False,Aktif
+146,ID-JI,RS Daerah Jawa Timur 2,Swasta,A,457,28,69,34,23,5484,True,True,115,330,30,-5.680326,97.102911,"Jl. Kesehatan No. 34, Jawa Timur",False,Aktif
+147,ID-JI,RS Bhayangkara Jawa Timur 3,Swasta,A,451,25,59,31,28,5412,False,True,94,523,28,1.977131,117.476571,"Jl. Kesehatan No. 94, Jawa Timur",False,Aktif
+148,ID-JI,RS Umum Jawa Timur 4,BUMN,B,193,7,22,11,8,2895,True,False,56,167,25,-9.736383,132.627812,"Jl. Kesehatan No. 18, Jawa Timur",True,Aktif
+149,ID-JI,RS TNI Jawa Timur 5,Swasta,C,58,2,2,4,1,812,False,False,13,66,6,0.207834,95.723661,"Jl. Kesehatan No. 53, Jawa Timur",True,Renovasi
+150,ID-JI,RS Daerah Jawa Timur 6,Swasta,B,154,8,15,15,6,2310,True,False,28,178,7,4.60683,119.121728,"Jl. Kesehatan No. 46, Jawa Timur",False,Aktif
+151,ID-JI,RS Umum Jawa Timur 7,Swasta,B,251,8,36,18,7,2008,True,False,40,270,8,5.85847,124.895145,"Jl. Kesehatan No. 49, Jawa Timur",False,Aktif
+152,ID-JI,RS Umum Jawa Timur 8,TNI/Polri,A,582,42,95,49,34,6402,True,True,133,425,65,5.555276,136.160396,"Jl. Kesehatan No. 89, Jawa Timur",False,Aktif
+153,ID-JI,RS Daerah Jawa Timur 9,Pemerintah,C,84,1,4,8,1,1176,False,False,19,52,8,-10.733812,104.529273,"Jl. Kesehatan No. 51, Jawa Timur",True,Aktif
+154,ID-JI,RS TNI Jawa Timur 10,Pemerintah,B,226,8,21,20,7,2938,False,True,37,232,8,5.804125,128.311524,"Jl. Kesehatan No. 13, Jawa Timur",False,Aktif
+155,ID-JI,RS Daerah Jawa Timur 11,Swasta,B,209,15,21,18,17,2299,False,False,61,152,23,2.320318,115.725309,"Jl. Kesehatan No. 56, Jawa Timur",True,Tutup Sementara
+156,ID-JI,RS Swasta Jawa Timur 12,Pemerintah,B,299,18,25,24,20,1794,False,True,34,181,14,-0.223685,129.024143,"Jl. Kesehatan No. 12, Jawa Timur",True,Aktif
+157,ID-JI,RS TNI Jawa Timur 13,Pemerintah,D,50,0,2,3,1,350,False,True,9,44,3,-9.24402,99.122467,"Jl. Kesehatan No. 77, Jawa Timur",False,Aktif
+158,ID-JI,RS Daerah Jawa Timur 14,BUMN,A,742,51,95,51,42,9646,False,False,208,879,77,-8.11709,112.513673,"Jl. Kesehatan No. 35, Jawa Timur",False,Aktif
+159,ID-JI,RS Bhayangkara Jawa Timur 15,Swasta,C,68,1,4,4,1,408,False,True,11,78,4,-2.571359,123.366764,"Jl. Kesehatan No. 18, Jawa Timur",False,Aktif
+160,ID-BT,RS TNI Banten 1,Swasta,C,100,2,8,9,1,1000,False,False,18,107,7,-0.89532,108.820023,"Jl. Kesehatan No. 26, Banten",False,Aktif
+161,ID-BT,RS Bhayangkara Banten 2,Swasta,B,230,8,24,15,8,3450,False,True,45,207,12,-4.60706,132.558748,"Jl. Kesehatan No. 73, Banten",True,Aktif
+162,ID-BT,RS Bhayangkara Banten 3,Swasta,B,289,11,38,14,11,2312,False,True,54,203,22,2.922415,131.600214,"Jl. Kesehatan No. 82, Banten",False,Tutup Sementara
+163,ID-BA,RS TNI Bali 1,Pemerintah,B,214,13,27,19,10,2996,True,False,41,167,14,4.646667,126.818608,"Jl. Kesehatan No. 90, Bali",True,Tutup Sementara
+164,ID-BA,RS Bhayangkara Bali 2,TNI/Polri,B,177,12,22,11,12,885,True,True,37,168,14,5.435789,110.253448,"Jl. Kesehatan No. 13, Bali",False,Aktif
+165,ID-BA,RS Umum Bali 3,Pemerintah,B,206,11,23,16,11,2472,False,True,36,169,14,0.737434,101.934267,"Jl. Kesehatan No. 38, Bali",False,Aktif
+166,ID-BA,RS Bhayangkara Bali 4,Pemerintah,C,60,1,5,3,1,720,False,False,15,51,4,-9.340408,128.211721,"Jl. Kesehatan No. 9, Bali",False,Aktif
+167,ID-BA,RS Swasta Bali 5,BUMN,C,55,2,3,5,2,825,False,False,14,63,5,-2.228104,120.387873,"Jl. Kesehatan No. 55, Bali",False,Aktif
+168,ID-BA,RS Daerah Bali 6,Swasta,B,209,14,25,12,14,2299,True,False,22,194,5,-0.932546,112.886446,"Jl. Kesehatan No. 97, Bali",True,Aktif
+169,ID-BA,RS Bhayangkara Bali 7,Swasta,A,595,32,111,35,29,7140,False,True,73,576,25,5.420579,109.416589,"Jl. Kesehatan No. 45, Bali",False,Tutup Sementara
+170,ID-BA,RS Swasta Bali 8,Swasta,C,108,4,9,9,3,1512,False,False,23,104,6,-6.944264,100.37965,"Jl. Kesehatan No. 19, Bali",False,Aktif
+171,ID-BA,RS Daerah Bali 9,Swasta,B,257,15,30,18,14,3341,True,False,61,244,30,-1.566486,117.523533,"Jl. Kesehatan No. 58, Bali",True,Tutup Sementara
+172,ID-BA,RS Bhayangkara Bali 10,TNI/Polri,A,743,50,75,42,56,9659,True,True,149,628,60,-3.934283,133.635023,"Jl. Kesehatan No. 73, Bali",True,Aktif
+173,ID-BA,RS TNI Bali 11,Pemerintah,D,45,1,2,2,1,315,False,True,11,40,4,-2.579673,118.497075,"Jl. Kesehatan No. 35, Bali",False,Renovasi
+174,ID-NB,RS Swasta Nusa Tenggara Barat 1,Pemerintah,C,146,3,12,11,3,876,False,False,36,139,9,3.871767,96.482598,"Jl. Kesehatan No. 12, Nusa Tenggara Barat",False,Aktif
+175,ID-NB,RS Daerah Nusa Tenggara Barat 2,BUMN,C,65,2,4,5,2,650,False,True,17,60,5,-0.52543,131.103068,"Jl. Kesehatan No. 73, Nusa Tenggara Barat",False,Aktif
+176,ID-NB,RS Daerah Nusa Tenggara Barat 3,Swasta,B,286,12,33,18,12,2574,False,True,61,333,21,4.30264,132.498322,"Jl. Kesehatan No. 36, Nusa Tenggara Barat",True,Aktif
+177,ID-NB,RS Umum Nusa Tenggara Barat 4,Pemerintah,D,42,1,1,3,1,630,False,False,7,25,2,-0.327182,112.257927,"Jl. Kesehatan No. 99, Nusa Tenggara Barat",True,Aktif
+178,ID-NB,RS Bhayangkara Nusa Tenggara Barat 5,BUMN,C,101,3,6,9,2,1212,False,False,16,50,6,1.456308,128.622869,"Jl. Kesehatan No. 86, Nusa Tenggara Barat",False,Aktif
+179,ID-NB,RS Bhayangkara Nusa Tenggara Barat 6,Swasta,C,58,2,4,5,2,696,False,False,8,62,2,-1.175128,121.042537,"Jl. Kesehatan No. 88, Nusa Tenggara Barat",True,Aktif
+180,ID-NB,RS Daerah Nusa Tenggara Barat 7,Pemerintah,C,55,1,4,4,1,385,False,False,10,27,4,-7.56059,126.675227,"Jl. Kesehatan No. 39, Nusa Tenggara Barat",True,Aktif
+181,ID-NT,RS Umum Nusa Tenggara Timur 1,BUMN,B,173,10,16,11,11,1211,True,True,19,162,7,1.838947,114.744623,"Jl. Kesehatan No. 28, Nusa Tenggara Timur",False,Aktif
+182,ID-NT,RS Bhayangkara Nusa Tenggara Timur 2,Swasta,B,169,6,16,14,4,1690,True,True,44,201,14,-8.753022,98.258102,"Jl. Kesehatan No. 14, Nusa Tenggara Timur",False,Aktif
+183,ID-NT,RS Daerah Nusa Tenggara Timur 3,Pemerintah,C,97,4,5,8,4,679,False,False,22,94,4,-1.424049,123.074685,"Jl. Kesehatan No. 45, Nusa Tenggara Timur",True,Aktif
+184,ID-NT,RS Daerah Nusa Tenggara Timur 4,Swasta,B,188,14,23,13,12,1128,True,False,24,110,10,-5.023894,114.751882,"Jl. Kesehatan No. 83, Nusa Tenggara Timur",True,Aktif
+185,ID-NT,RS Bhayangkara Nusa Tenggara Timur 5,Swasta,B,213,12,25,17,13,1065,False,True,57,204,16,-2.198265,118.438038,"Jl. Kesehatan No. 31, Nusa Tenggara Timur",False,Aktif
+186,ID-KB,RS Swasta Kalimantan Barat 1,Swasta,A,357,22,58,19,25,1785,True,False,106,411,25,3.633838,121.145498,"Jl. Kesehatan No. 99, Kalimantan Barat",True,Aktif
+187,ID-KB,RS Umum Kalimantan Barat 2,Swasta,B,154,9,12,9,10,1694,True,False,31,144,10,-3.937656,127.283289,"Jl. Kesehatan No. 11, Kalimantan Barat",False,Aktif
+188,ID-KB,RS Bhayangkara Kalimantan Barat 3,Pemerintah,B,170,9,16,15,9,1870,True,True,36,175,14,-0.066372,109.267797,"Jl. Kesehatan No. 32, Kalimantan Barat",True,Aktif
+189,ID-KB,RS Swasta Kalimantan Barat 4,Pemerintah,C,105,2,8,5,2,1575,False,False,26,61,10,0.925493,102.536301,"Jl. Kesehatan No. 67, Kalimantan Barat",False,Aktif
+190,ID-KB,RS TNI Kalimantan Barat 5,Swasta,C,71,2,6,6,2,426,False,False,18,36,7,-6.37633,97.938111,"Jl. Kesehatan No. 10, Kalimantan Barat",False,Aktif
+191,ID-KB,RS TNI Kalimantan Barat 6,Swasta,C,108,3,5,10,2,756,False,True,16,61,5,1.287232,105.506603,"Jl. Kesehatan No. 6, Kalimantan Barat",True,Aktif
+192,ID-KT,RS Bhayangkara Kalimantan Tengah 1,Swasta,C,55,1,3,3,1,275,False,False,11,62,4,-3.870722,109.802893,"Jl. Kesehatan No. 41, Kalimantan Tengah",False,Tutup Sementara
+193,ID-KT,RS Swasta Kalimantan Tengah 2,Pemerintah,D,46,0,2,3,1,322,False,False,6,39,2,-4.184278,135.341597,"Jl. Kesehatan No. 42, Kalimantan Tengah",True,Aktif
+194,ID-KT,RS TNI Kalimantan Tengah 3,Pemerintah,C,120,4,8,7,4,1680,False,True,17,90,8,5.962381,130.690754,"Jl. Kesehatan No. 20, Kalimantan Tengah",True,Renovasi
+195,ID-KT,RS Umum Kalimantan Tengah 4,Swasta,B,254,7,29,20,7,1270,True,True,73,127,28,3.433102,128.451892,"Jl. Kesehatan No. 54, Kalimantan Tengah",False,Aktif
+196,ID-KS,RS TNI Kalimantan Selatan 1,Pemerintah,A,797,79,136,43,92,10361,True,False,145,898,48,1.71429,121.715449,"Jl. Kesehatan No. 10, Kalimantan Selatan",True,Aktif
+197,ID-KS,RS Daerah Kalimantan Selatan 2,Pemerintah,B,261,16,23,16,18,2871,True,True,62,264,18,-6.37675,98.435622,"Jl. Kesehatan No. 20, Kalimantan Selatan",True,Aktif
+198,ID-KS,RS Swasta Kalimantan Selatan 3,Swasta,A,384,27,50,21,25,3072,True,True,73,316,33,-9.462845,132.149458,"Jl. Kesehatan No. 42, Kalimantan Selatan",True,Aktif
+199,ID-KI,RS Bhayangkara Kalimantan Timur 1,TNI/Polri,B,213,16,22,11,14,1491,True,True,22,166,7,1.717334,106.493221,"Jl. Kesehatan No. 16, Kalimantan Timur",True,Aktif
+200,ID-KI,RS Umum Kalimantan Timur 2,Pemerintah,B,165,11,24,9,12,1650,True,True,39,190,8,-1.035981,137.201715,"Jl. Kesehatan No. 26, Kalimantan Timur",False,Aktif
+201,ID-KI,RS Bhayangkara Kalimantan Timur 3,Pemerintah,B,182,6,25,16,5,2184,False,True,20,208,6,1.315324,117.821814,"Jl. Kesehatan No. 46, Kalimantan Timur",True,Aktif
+202,ID-KU,RS Bhayangkara Kalimantan Utara 1,Pemerintah,B,220,9,31,11,9,1760,True,False,50,186,23,-2.856474,99.035191,"Jl. Kesehatan No. 26, Kalimantan Utara",True,Aktif
+203,ID-KU,RS Umum Kalimantan Utara 2,Pemerintah,B,289,20,43,25,18,3757,False,True,74,214,27,-5.532725,107.440041,"Jl. Kesehatan No. 4, Kalimantan Utara",False,Aktif
+204,ID-KU,RS Umum Kalimantan Utara 3,Swasta,A,329,29,48,22,29,2632,True,False,96,187,38,-6.469041,132.549117,"Jl. Kesehatan No. 46, Kalimantan Utara",True,Aktif
+205,ID-KU,RS Daerah Kalimantan Utara 4,Swasta,A,390,24,51,33,22,5460,False,False,41,386,19,-1.41869,120.903009,"Jl. Kesehatan No. 23, Kalimantan Utara",False,Aktif
+206,ID-SA,RS Swasta Sulawesi Utara 1,TNI/Polri,A,346,18,55,17,17,3460,True,True,98,221,23,1.18794,137.263916,"Jl. Kesehatan No. 19, Sulawesi Utara",True,Aktif
+207,ID-SA,RS Bhayangkara Sulawesi Utara 2,Swasta,C,149,3,11,10,2,2235,False,False,26,85,7,-8.680322,102.245179,"Jl. Kesehatan No. 63, Sulawesi Utara",False,Aktif
+208,ID-SA,RS Daerah Sulawesi Utara 3,Pemerintah,B,194,12,23,18,12,1940,True,True,28,176,7,-5.784005,126.670928,"Jl. Kesehatan No. 90, Sulawesi Utara",False,Aktif
+209,ID-ST,RS Swasta Sulawesi Tengah 1,Swasta,B,158,6,16,14,6,2370,True,True,33,182,7,1.670837,105.947813,"Jl. Kesehatan No. 91, Sulawesi Tengah",False,Aktif
+210,ID-ST,RS Bhayangkara Sulawesi Tengah 2,Swasta,A,528,26,63,44,24,3168,False,False,128,281,42,-3.865895,102.651568,"Jl. Kesehatan No. 45, Sulawesi Tengah",False,Aktif
+211,ID-ST,RS Umum Sulawesi Tengah 3,Swasta,C,62,2,5,4,2,496,False,True,8,34,3,-5.986554,109.660978,"Jl. Kesehatan No. 44, Sulawesi Tengah",True,Aktif
+212,ID-ST,RS Daerah Sulawesi Tengah 4,Swasta,A,754,51,130,58,59,4524,False,True,126,897,58,0.976579,114.840873,"Jl. Kesehatan No. 7, Sulawesi Tengah",True,Aktif
+213,ID-ST,RS Bhayangkara Sulawesi Tengah 5,Swasta,B,234,9,21,19,9,3042,True,True,35,163,9,-10.156197,121.301411,"Jl. Kesehatan No. 47, Sulawesi Tengah",True,Aktif
+214,ID-ST,RS Swasta Sulawesi Tengah 6,Pemerintah,A,518,28,94,42,27,3108,False,False,54,320,15,-9.607086,133.813377,"Jl. Kesehatan No. 63, Sulawesi Tengah",False,Aktif
+215,ID-ST,RS Umum Sulawesi Tengah 7,Pemerintah,B,173,10,18,11,9,1211,True,True,32,118,10,-7.153881,107.353852,"Jl. Kesehatan No. 11, Sulawesi Tengah",False,Aktif
+216,ID-SN,RS Bhayangkara Sulawesi Selatan 1,TNI/Polri,B,300,12,25,20,12,3900,True,True,71,346,26,-6.994086,108.747197,"Jl. Kesehatan No. 16, Sulawesi Selatan",False,Aktif
+217,ID-SN,RS TNI Sulawesi Selatan 2,Swasta,B,194,15,17,11,13,970,False,False,35,231,11,5.953577,123.852406,"Jl. Kesehatan No. 94, Sulawesi Selatan",True,Aktif
+218,ID-SN,RS Umum Sulawesi Selatan 3,Swasta,B,172,8,18,11,7,2064,False,True,48,87,19,-1.011207,130.95754,"Jl. Kesehatan No. 19, Sulawesi Selatan",True,Aktif
+219,ID-SN,RS Daerah Sulawesi Selatan 4,Swasta,A,773,42,137,69,48,7730,False,False,213,529,84,-1.275605,116.760144,"Jl. Kesehatan No. 19, Sulawesi Selatan",False,Aktif
+220,ID-SN,RS Swasta Sulawesi Selatan 5,Pemerintah,C,54,1,5,4,1,648,False,False,15,60,3,2.895561,108.940528,"Jl. Kesehatan No. 90, Sulawesi Selatan",True,Aktif
+221,ID-SN,RS Bhayangkara Sulawesi Selatan 6,Pemerintah,D,47,0,2,4,1,470,False,False,7,37,2,-7.805093,104.723963,"Jl. Kesehatan No. 63, Sulawesi Selatan",False,Aktif
+222,ID-SN,RS Daerah Sulawesi Selatan 7,Pemerintah,B,164,9,14,10,9,1148,True,True,42,142,15,-8.046465,135.258306,"Jl. Kesehatan No. 5, Sulawesi Selatan",False,Aktif
+223,ID-SN,RS Bhayangkara Sulawesi Selatan 8,Pemerintah,B,162,12,20,10,13,2106,True,False,29,185,11,-6.887052,117.48419,"Jl. Kesehatan No. 76, Sulawesi Selatan",False,Aktif
+224,ID-SN,RS Daerah Sulawesi Selatan 9,Pemerintah,B,238,9,33,20,9,2142,True,True,25,127,11,2.257112,104.858655,"Jl. Kesehatan No. 35, Sulawesi Selatan",False,Aktif
+225,ID-SN,RS Swasta Sulawesi Selatan 10,Pemerintah,C,115,2,10,10,1,805,False,False,26,105,5,-6.709362,132.033936,"Jl. Kesehatan No. 91, Sulawesi Selatan",False,Aktif
+226,ID-SN,RS Swasta Sulawesi Selatan 11,BUMN,A,516,48,95,37,42,4644,False,False,121,555,38,-9.260694,118.529631,"Jl. Kesehatan No. 88, Sulawesi Selatan",True,Aktif
+227,ID-SN,RS Daerah Sulawesi Selatan 12,BUMN,C,111,2,11,9,2,999,False,True,25,129,9,-7.797879,118.795505,"Jl. Kesehatan No. 77, Sulawesi Selatan",False,Aktif
+228,ID-SN,RS Daerah Sulawesi Selatan 13,Pemerintah,B,231,14,30,19,16,2079,False,True,64,180,26,-1.088597,140.758672,"Jl. Kesehatan No. 88, Sulawesi Selatan",False,Aktif
+229,ID-SN,RS Daerah Sulawesi Selatan 14,TNI/Polri,B,241,13,33,22,14,1687,False,True,38,199,16,1.328173,120.715456,"Jl. Kesehatan No. 29, Sulawesi Selatan",False,Aktif
+230,ID-SG,RS TNI Sulawesi Tenggara 1,Pemerintah,C,145,6,10,13,5,2030,False,True,23,158,7,3.728687,121.844433,"Jl. Kesehatan No. 61, Sulawesi Tenggara",True,Aktif
+231,ID-SG,RS Bhayangkara Sulawesi Tenggara 2,Pemerintah,C,114,2,9,8,1,798,False,True,14,72,4,-1.320139,136.704563,"Jl. Kesehatan No. 41, Sulawesi Tenggara",True,Aktif
+232,ID-SG,RS Umum Sulawesi Tenggara 3,Pemerintah,B,170,9,21,10,9,850,True,False,32,109,13,-1.203258,102.288015,"Jl. Kesehatan No. 82, Sulawesi Tenggara",False,Aktif
+233,ID-SG,RS Umum Sulawesi Tenggara 4,Pemerintah,C,101,3,7,5,3,1010,False,False,29,113,12,-1.972426,95.824142,"Jl. Kesehatan No. 94, Sulawesi Tenggara",True,Aktif
+234,ID-GO,RS Swasta Gorontalo 1,Swasta,B,238,10,20,17,9,1428,False,True,63,168,18,1.373142,122.433016,"Jl. Kesehatan No. 44, Gorontalo",False,Aktif
+235,ID-GO,RS Daerah Gorontalo 2,Pemerintah,B,241,16,22,22,17,1205,True,False,35,243,8,1.479303,122.12587,"Jl. Kesehatan No. 92, Gorontalo",True,Aktif
+236,ID-GO,RS Bhayangkara Gorontalo 3,BUMN,B,246,18,24,18,14,1230,True,False,57,235,11,0.725746,114.171676,"Jl. Kesehatan No. 61, Gorontalo",True,Aktif
+237,ID-GO,RS TNI Gorontalo 4,Pemerintah,C,76,3,6,4,3,1140,False,False,15,71,6,-3.879962,136.336609,"Jl. Kesehatan No. 80, Gorontalo",True,Aktif
+238,ID-SR,RS Daerah Sulawesi Barat 1,Swasta,B,179,12,20,14,13,2327,False,False,52,134,16,-8.273649,120.214383,"Jl. Kesehatan No. 31, Sulawesi Barat",True,Aktif
+239,ID-SR,RS Daerah Sulawesi Barat 2,Pemerintah,D,20,0,1,1,1,140,False,False,5,20,2,1.300796,136.619852,"Jl. Kesehatan No. 38, Sulawesi Barat",False,Aktif
+240,ID-SR,RS Umum Sulawesi Barat 3,BUMN,A,537,28,97,50,31,5370,True,True,139,386,58,-9.385026,129.877384,"Jl. Kesehatan No. 85, Sulawesi Barat",True,Aktif
+241,ID-SR,RS Bhayangkara Sulawesi Barat 4,TNI/Polri,A,468,31,67,37,35,2808,False,False,81,346,18,-4.195746,116.00078,"Jl. Kesehatan No. 84, Sulawesi Barat",True,Aktif
+242,ID-SR,RS Bhayangkara Sulawesi Barat 5,Swasta,B,178,6,23,17,6,1068,False,True,32,162,14,0.532683,103.337986,"Jl. Kesehatan No. 88, Sulawesi Barat",True,Aktif
+243,ID-MA,RS Daerah Maluku 1,Pemerintah,C,112,2,7,5,1,1120,False,False,11,124,3,1.641605,128.293583,"Jl. Kesehatan No. 44, Maluku",True,Aktif
+244,ID-MA,RS Daerah Maluku 2,Pemerintah,B,260,16,25,17,17,2860,False,False,33,280,15,-0.580462,95.535664,"Jl. Kesehatan No. 22, Maluku",True,Aktif
+245,ID-MA,RS Bhayangkara Maluku 3,Swasta,B,275,12,28,17,12,3575,True,False,62,215,16,-3.195392,131.858019,"Jl. Kesehatan No. 58, Maluku",False,Aktif
+246,ID-MA,RS Swasta Maluku 4,TNI/Polri,B,180,14,23,9,13,900,True,False,38,90,8,-0.728544,123.477043,"Jl. Kesehatan No. 44, Maluku",False,Aktif
+247,ID-MA,RS Daerah Maluku 5,Swasta,B,163,11,22,10,12,2282,True,False,31,156,12,-9.061603,129.928718,"Jl. Kesehatan No. 46, Maluku",False,Aktif
+248,ID-MA,RS Umum Maluku 6,Pemerintah,C,120,4,10,6,3,840,False,False,31,122,10,-6.677082,104.012387,"Jl. Kesehatan No. 28, Maluku",False,Aktif
+249,ID-MU,RS Daerah Maluku Utara 1,Pemerintah,D,42,0,2,2,1,630,False,False,9,43,3,0.193764,138.984755,"Jl. Kesehatan No. 1, Maluku Utara",True,Aktif
+250,ID-MU,RS TNI Maluku Utara 2,Swasta,C,120,5,11,8,5,840,False,False,28,74,12,-9.239583,125.246003,"Jl. Kesehatan No. 65, Maluku Utara",False,Aktif
+251,ID-MU,RS TNI Maluku Utara 3,Pemerintah,D,33,0,2,2,1,330,False,False,9,26,2,-3.983327,127.200657,"Jl. Kesehatan No. 90, Maluku Utara",False,Aktif
+252,ID-MU,RS TNI Maluku Utara 4,Pemerintah,B,291,17,27,23,15,2910,False,True,82,172,33,5.578051,103.179384,"Jl. Kesehatan No. 98, Maluku Utara",False,Aktif
+253,ID-PA,RS Daerah Papua 1,Swasta,B,272,16,39,23,17,3536,True,True,42,297,18,-2.11359,96.162518,"Jl. Kesehatan No. 26, Papua",False,Aktif
+254,ID-PA,RS Umum Papua 2,Swasta,A,684,61,135,57,52,3420,True,False,162,483,69,-10.450791,132.445206,"Jl. Kesehatan No. 31, Papua",False,Aktif
+255,ID-PA,RS Bhayangkara Papua 3,Pemerintah,C,138,5,13,9,5,2070,False,True,22,122,4,-6.727201,123.545838,"Jl. Kesehatan No. 82, Papua",False,Aktif
+256,ID-PA,RS TNI Papua 4,Swasta,C,146,5,12,8,5,1168,False,True,23,91,9,-7.821398,102.994576,"Jl. Kesehatan No. 49, Papua",True,Aktif
+257,ID-PA,RS Umum Papua 5,Pemerintah,D,33,0,1,1,1,165,False,False,5,32,2,-8.387042,109.840981,"Jl. Kesehatan No. 79, Papua",False,Aktif
+258,ID-PA,RS TNI Papua 6,Swasta,A,551,49,85,29,53,7163,False,True,79,346,17,-2.412614,114.132837,"Jl. Kesehatan No. 45, Papua",True,Aktif
+259,ID-PA,RS Swasta Papua 7,Swasta,A,752,45,100,51,39,10528,False,True,154,900,68,5.679264,95.40497,"Jl. Kesehatan No. 83, Papua",True,Aktif
+260,ID-PB,RS TNI Papua Barat 1,Swasta,C,137,6,9,12,5,1233,False,False,28,95,13,2.975854,112.24807,"Jl. Kesehatan No. 63, Papua Barat",True,Aktif
+261,ID-PB,RS Daerah Papua Barat 2,Swasta,B,225,16,21,17,18,1575,False,True,66,234,23,-0.342138,104.695948,"Jl. Kesehatan No. 27, Papua Barat",False,Aktif
+262,ID-PB,RS Swasta Papua Barat 3,Pemerintah,B,168,11,15,12,10,1008,False,False,19,104,5,-9.802484,132.794489,"Jl. Kesehatan No. 58, Papua Barat",False,Tutup Sementara

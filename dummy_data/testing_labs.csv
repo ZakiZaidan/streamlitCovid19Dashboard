@@ -1,0 +1,176 @@
+id_lab,iso_code,nama_lab,jenis_lab,tipe_kepemilikan,kapasitas_harian_pcr,kapasitas_harian_antigen,kapasitas_harian_antibodi,mesin_pcr_count,extraction_kit_stock,reagent_stock,analis_count,teknisi_count,turnaround_time_pcr,turnaround_time_antigen,akreditasi_kemenkes,iso_certified,latitude,longitude,alamat,operational_24_hours,drive_thru_available
+1,ID-AC,Lab Antigen Aceh 1,Antigen,Swasta,0,614,2,0,504,2199,15,6,24,4,True,True,-5.672227,126.916997,"Jl. Laboratorium No. 67, Aceh",True,True
+2,ID-AC,Lab Antigen Aceh 2,Antigen,Universitas,0,1474,53,0,3914,4612,15,5,24,1,False,False,2.110316,132.610631,"Jl. Laboratorium No. 93, Aceh",False,True
+3,ID-AC,Lab PCR Aceh 3,PCR,Swasta,538,32,13,2,3456,1723,15,7,12,3,True,False,-6.690895,139.083185,"Jl. Laboratorium No. 29, Aceh",True,False
+4,ID-AC,Lab Antigen Aceh 4,Antigen,Swasta,0,532,82,0,3525,3479,10,9,24,4,True,False,-5.445216,120.918556,"Jl. Laboratorium No. 27, Aceh",True,False
+5,ID-AC,Lab PCR Aceh 5,PCR,Universitas,479,160,90,5,1126,3247,17,13,16,4,False,False,3.600423,117.294805,"Jl. Laboratorium No. 53, Aceh",False,False
+6,ID-SU,Lab Kombinasi Sumatera Utara 1,Kombinasi,Swasta,443,679,242,4,2609,6315,8,12,18,3,False,False,-1.205188,128.954939,"Jl. Laboratorium No. 56, Sumatera Utara",True,False
+7,ID-SU,Lab Antigen Sumatera Utara 2,Antigen,Universitas,0,808,21,0,2536,4440,8,9,24,2,False,False,4.184598,120.070903,"Jl. Laboratorium No. 54, Sumatera Utara",False,False
+8,ID-SU,Lab Antibodi Sumatera Utara 3,Antibodi,Pemerintah,0,0,138,0,152,1426,13,11,24,3,True,False,4.818801,130.146294,"Jl. Laboratorium No. 84, Sumatera Utara",True,False
+9,ID-SU,Lab Antigen Sumatera Utara 4,Antigen,Swasta,0,428,27,0,834,8061,7,10,24,3,True,True,2.967992,95.040637,"Jl. Laboratorium No. 99, Sumatera Utara",True,True
+10,ID-SB,Lab Antigen Sumatera Barat 1,Antigen,Swasta,0,798,49,0,289,2625,19,10,24,2,False,False,-2.761894,113.885271,"Jl. Laboratorium No. 97, Sumatera Barat",True,False
+11,ID-SB,Lab Kombinasi Sumatera Barat 2,Kombinasi,Universitas,317,108,115,2,4467,9517,5,12,14,4,False,False,-5.323083,95.246186,"Jl. Laboratorium No. 54, Sumatera Barat",False,False
+12,ID-SB,Lab Antigen Sumatera Barat 3,Antigen,Pemerintah,0,752,80,0,1815,1340,18,9,24,2,True,False,0.25954,97.185423,"Jl. Laboratorium No. 90, Sumatera Barat",True,True
+13,ID-SB,Lab Kombinasi Sumatera Barat 4,Kombinasi,Swasta,285,855,107,5,4839,9267,19,14,9,3,True,False,-3.21409,115.544686,"Jl. Laboratorium No. 4, Sumatera Barat",False,True
+14,ID-SB,Lab PCR Sumatera Barat 5,PCR,Universitas,395,199,90,7,401,6438,20,13,8,2,False,False,3.543039,122.625061,"Jl. Laboratorium No. 6, Sumatera Barat",False,False
+15,ID-SB,Lab Kombinasi Sumatera Barat 6,Kombinasi,Swasta,81,483,273,3,3047,1667,19,10,12,4,True,False,-5.039676,117.61716,"Jl. Laboratorium No. 75, Sumatera Barat",False,True
+16,ID-SB,Lab Antigen Sumatera Barat 7,Antigen,Pemerintah,0,1371,47,0,278,2163,20,3,24,3,True,False,5.490616,133.586371,"Jl. Laboratorium No. 99, Sumatera Barat",True,False
+17,ID-RI,Lab PCR Riau 1,PCR,Pemerintah,258,135,61,2,3773,4138,3,13,16,4,False,False,5.403529,100.057193,"Jl. Laboratorium No. 6, Riau",True,True
+18,ID-RI,Lab Kombinasi Riau 2,Kombinasi,Pemerintah,240,549,137,3,262,652,9,3,11,4,False,True,-9.692016,128.529265,"Jl. Laboratorium No. 26, Riau",True,True
+19,ID-RI,Lab Antigen Riau 3,Antigen,Pemerintah,0,1288,15,0,3393,6425,5,6,24,2,False,True,-8.494357,107.65327,"Jl. Laboratorium No. 67, Riau",True,True
+20,ID-RI,Lab Antigen Riau 4,Antigen,Universitas,0,1614,99,0,2612,651,16,6,24,3,True,True,-1.721432,140.539596,"Jl. Laboratorium No. 39, Riau",False,True
+21,ID-JA,Lab Antigen Jambi 1,Antigen,Pemerintah,0,1683,77,0,2245,2251,17,5,24,3,False,True,-1.8787,133.881266,"Jl. Laboratorium No. 27, Jambi",True,False
+22,ID-JA,Lab Antibodi Jambi 2,Antibodi,Swasta,0,0,220,0,1237,3811,6,11,24,3,True,True,-9.328227,126.974351,"Jl. Laboratorium No. 70, Jambi",False,False
+23,ID-JA,Lab PCR Jambi 3,PCR,Swasta,772,155,62,2,3742,5603,15,9,22,3,True,True,0.511492,100.00218,"Jl. Laboratorium No. 41, Jambi",False,True
+24,ID-JA,Lab PCR Jambi 4,PCR,Pemerintah,963,196,48,5,304,9304,7,5,8,2,True,True,-8.931054,110.363041,"Jl. Laboratorium No. 88, Jambi",True,False
+25,ID-JA,Lab Antigen Jambi 5,Antigen,Swasta,0,1525,65,0,3537,1971,6,6,24,1,False,True,-4.896773,131.823983,"Jl. Laboratorium No. 65, Jambi",False,False
+26,ID-SS,Lab Kombinasi Sumatera Selatan 1,Kombinasi,Pemerintah,189,189,122,3,2445,8349,10,7,22,3,False,False,-0.043077,109.691433,"Jl. Laboratorium No. 99, Sumatera Selatan",False,False
+27,ID-SS,Lab Antigen Sumatera Selatan 2,Antigen,Swasta,0,359,49,0,1946,5469,11,9,24,4,False,True,-7.606035,130.380134,"Jl. Laboratorium No. 45, Sumatera Selatan",True,False
+28,ID-SS,Lab PCR Sumatera Selatan 3,PCR,Swasta,559,94,31,2,2765,3778,17,15,15,1,False,False,4.416749,139.156009,"Jl. Laboratorium No. 28, Sumatera Selatan",False,True
+29,ID-SS,Lab PCR Sumatera Selatan 4,PCR,TNI/Polri,177,64,27,8,1336,7222,5,11,24,2,True,False,0.230539,116.419389,"Jl. Laboratorium No. 5, Sumatera Selatan",False,True
+30,ID-SS,Lab PCR Sumatera Selatan 5,PCR,Swasta,552,170,47,2,3715,5964,17,13,14,1,False,False,0.626985,133.671128,"Jl. Laboratorium No. 64, Sumatera Selatan",False,True
+31,ID-SS,Lab PCR Sumatera Selatan 6,PCR,TNI/Polri,415,83,3,3,2828,6348,10,3,9,3,False,False,-9.760053,128.371469,"Jl. Laboratorium No. 12, Sumatera Selatan",False,False
+32,ID-SS,Lab Antigen Sumatera Selatan 7,Antigen,Swasta,0,1022,34,0,2166,7825,20,7,24,3,False,True,-0.588082,129.812339,"Jl. Laboratorium No. 11, Sumatera Selatan",False,True
+33,ID-SS,Lab PCR Sumatera Selatan 8,PCR,Swasta,861,196,91,2,4741,8497,11,10,22,3,False,True,-10.248059,128.315669,"Jl. Laboratorium No. 30, Sumatera Selatan",False,True
+34,ID-BE,Lab PCR Bengkulu 1,PCR,Universitas,211,155,1,6,3744,2515,19,8,21,4,True,True,-2.130774,129.256587,"Jl. Laboratorium No. 23, Bengkulu",False,False
+35,ID-BE,Lab PCR Bengkulu 2,PCR,Pemerintah,487,45,28,4,808,6325,5,5,14,3,True,True,-3.131965,122.896156,"Jl. Laboratorium No. 27, Bengkulu",False,True
+36,ID-BE,Lab PCR Bengkulu 3,PCR,Swasta,753,179,55,6,1150,5758,11,3,8,3,True,True,0.552902,113.341445,"Jl. Laboratorium No. 26, Bengkulu",False,False
+37,ID-BE,Lab Antigen Bengkulu 4,Antigen,Pemerintah,0,1422,60,0,4698,6739,13,3,24,4,True,False,-0.037243,137.683264,"Jl. Laboratorium No. 19, Bengkulu",True,False
+38,ID-LA,Lab Antibodi Lampung 1,Antibodi,Swasta,0,0,250,0,3811,675,11,14,24,4,False,False,-9.458697,116.034191,"Jl. Laboratorium No. 82, Lampung",False,False
+39,ID-LA,Lab Antigen Lampung 2,Antigen,Swasta,0,1587,8,0,3051,7931,20,12,24,4,True,True,-10.964207,95.209203,"Jl. Laboratorium No. 3, Lampung",True,True
+40,ID-LA,Lab Antigen Lampung 3,Antigen,Swasta,0,1423,24,0,4241,3268,16,5,24,3,False,True,-8.098991,140.50247,"Jl. Laboratorium No. 71, Lampung",False,False
+41,ID-LA,Lab PCR Lampung 4,PCR,Pemerintah,634,127,1,4,648,2805,11,14,10,3,False,False,-9.250445,114.528993,"Jl. Laboratorium No. 49, Lampung",True,False
+42,ID-LA,Lab Kombinasi Lampung 5,Kombinasi,Universitas,367,771,219,3,4756,5612,19,5,18,1,False,False,-9.489857,121.853844,"Jl. Laboratorium No. 89, Lampung",False,True
+43,ID-BB,Lab Antigen Kepulauan Bangka Belitung 1,Antigen,Pemerintah,0,1607,45,0,2227,2622,7,10,24,4,False,True,1.581833,117.266398,"Jl. Laboratorium No. 13, Kepulauan Bangka Belitung",True,False
+44,ID-BB,Lab Antigen Kepulauan Bangka Belitung 2,Antigen,Swasta,0,347,97,0,3705,2452,10,11,24,4,True,True,3.835542,122.192573,"Jl. Laboratorium No. 55, Kepulauan Bangka Belitung",True,False
+45,ID-BB,Lab PCR Kepulauan Bangka Belitung 3,PCR,Pemerintah,846,39,90,4,694,6741,14,8,14,4,True,False,4.93613,126.437783,"Jl. Laboratorium No. 56, Kepulauan Bangka Belitung",True,False
+46,ID-BB,Lab Antibodi Kepulauan Bangka Belitung 4,Antibodi,Swasta,0,0,134,0,167,6742,8,3,24,4,False,False,-7.841616,122.603466,"Jl. Laboratorium No. 29, Kepulauan Bangka Belitung",True,True
+47,ID-KR,Lab PCR Kepulauan Riau 1,PCR,Pemerintah,848,195,31,3,2607,7354,18,8,10,4,False,False,2.232985,132.435187,"Jl. Laboratorium No. 86, Kepulauan Riau",True,True
+48,ID-KR,Lab PCR Kepulauan Riau 2,PCR,Swasta,615,77,90,5,2380,9698,14,3,22,3,False,True,-7.427272,101.044248,"Jl. Laboratorium No. 37, Kepulauan Riau",True,True
+49,ID-KR,Lab PCR Kepulauan Riau 3,PCR,Pemerintah,682,92,35,5,4879,9799,3,5,11,2,False,True,-3.84568,109.339054,"Jl. Laboratorium No. 45, Kepulauan Riau",True,True
+50,ID-JK,Lab Antibodi DKI Jakarta 1,Antibodi,Pemerintah,0,0,264,0,4233,5914,8,9,24,4,True,False,-9.953817,108.231025,"Jl. Laboratorium No. 46, DKI Jakarta",False,False
+51,ID-JK,Lab Antigen DKI Jakarta 2,Antigen,Pemerintah,0,315,36,0,3658,4528,19,4,24,2,True,True,-3.980502,119.67317,"Jl. Laboratorium No. 26, DKI Jakarta",False,False
+52,ID-JK,Lab PCR DKI Jakarta 3,PCR,Pemerintah,808,21,45,4,903,7766,17,8,21,4,False,False,5.454822,102.767867,"Jl. Laboratorium No. 44, DKI Jakarta",True,True
+53,ID-JK,Lab Antibodi DKI Jakarta 4,Antibodi,Universitas,0,0,310,0,3206,1510,11,6,24,4,False,False,-1.110143,131.820186,"Jl. Laboratorium No. 7, DKI Jakarta",False,True
+54,ID-JK,Lab Kombinasi DKI Jakarta 5,Kombinasi,Pemerintah,180,972,171,5,1340,7196,7,7,21,4,False,False,-8.943358,112.292209,"Jl. Laboratorium No. 72, DKI Jakarta",True,False
+55,ID-JK,Lab Antigen DKI Jakarta 6,Antigen,Pemerintah,0,1454,84,0,4667,1757,7,10,24,1,True,False,-3.356259,99.933132,"Jl. Laboratorium No. 15, DKI Jakarta",False,True
+56,ID-JK,Lab PCR DKI Jakarta 7,PCR,Universitas,457,101,41,10,3201,9516,3,4,23,2,False,True,-6.249204,135.156758,"Jl. Laboratorium No. 85, DKI Jakarta",False,False
+57,ID-JK,Lab PCR DKI Jakarta 8,PCR,Pemerintah,216,184,10,5,2085,1805,18,9,18,4,True,False,-10.916363,137.395479,"Jl. Laboratorium No. 61, DKI Jakarta",True,False
+58,ID-JK,Lab PCR DKI Jakarta 9,PCR,Pemerintah,928,143,35,3,231,9325,18,2,20,1,False,False,-10.857112,113.833824,"Jl. Laboratorium No. 37, DKI Jakarta",False,True
+59,ID-JB,Lab PCR Jawa Barat 1,PCR,Swasta,949,144,40,9,3110,5709,8,8,16,4,False,False,-6.672394,98.138508,"Jl. Laboratorium No. 2, Jawa Barat",False,False
+60,ID-JB,Lab Antigen Jawa Barat 2,Antigen,Universitas,0,1810,96,0,4968,1642,4,15,24,4,False,False,-0.188175,116.256485,"Jl. Laboratorium No. 67, Jawa Barat",False,True
+61,ID-JB,Lab Kombinasi Jawa Barat 3,Kombinasi,Pemerintah,332,821,69,5,2169,1226,3,11,8,3,False,True,0.43684,134.573605,"Jl. Laboratorium No. 92, Jawa Barat",False,False
+62,ID-JB,Lab PCR Jawa Barat 4,PCR,Pemerintah,439,56,19,4,4142,9073,11,15,8,1,False,True,0.071233,113.527431,"Jl. Laboratorium No. 47, Jawa Barat",True,False
+63,ID-JB,Lab Antigen Jawa Barat 5,Antigen,Pemerintah,0,1366,55,0,1639,1893,9,8,24,3,True,False,0.167232,136.164768,"Jl. Laboratorium No. 82, Jawa Barat",True,True
+64,ID-JB,Lab Antigen Jawa Barat 6,Antigen,Swasta,0,1441,63,0,3209,4805,4,5,24,2,True,False,0.770168,115.301939,"Jl. Laboratorium No. 37, Jawa Barat",False,True
+65,ID-JB,Lab Antigen Jawa Barat 7,Antigen,Swasta,0,1675,92,0,1301,2058,11,7,24,3,False,True,-3.761968,119.299556,"Jl. Laboratorium No. 45, Jawa Barat",False,False
+66,ID-JB,Lab PCR Jawa Barat 8,PCR,Universitas,250,10,68,8,402,7852,15,8,11,3,True,True,-3.42074,95.526677,"Jl. Laboratorium No. 13, Jawa Barat",False,True
+67,ID-JB,Lab Antibodi Jawa Barat 9,Antibodi,Pemerintah,0,0,378,0,4442,9769,11,9,24,3,False,False,-4.257132,97.898752,"Jl. Laboratorium No. 82, Jawa Barat",True,True
+68,ID-JB,Lab Kombinasi Jawa Barat 10,Kombinasi,Swasta,259,344,243,4,1502,609,16,4,9,4,False,True,4.856366,132.90615,"Jl. Laboratorium No. 45, Jawa Barat",True,False
+69,ID-JB,Lab Kombinasi Jawa Barat 11,Kombinasi,Swasta,478,882,165,1,1056,9676,14,3,21,4,False,True,-10.197294,104.774374,"Jl. Laboratorium No. 85, Jawa Barat",False,True
+70,ID-JB,Lab Antigen Jawa Barat 12,Antigen,Pemerintah,0,1841,40,0,4444,2042,12,3,24,1,True,False,1.793542,101.533486,"Jl. Laboratorium No. 46, Jawa Barat",False,False
+71,ID-JB,Lab PCR Jawa Barat 13,PCR,Swasta,773,184,54,2,4606,3297,9,11,20,3,False,True,-0.217239,127.990092,"Jl. Laboratorium No. 35, Jawa Barat",False,True
+72,ID-JB,Lab Antigen Jawa Barat 14,Antigen,Pemerintah,0,223,40,0,3832,1601,17,11,24,3,False,False,1.446005,134.274595,"Jl. Laboratorium No. 26, Jawa Barat",False,False
+73,ID-JT,Lab PCR Jawa Tengah 1,PCR,Swasta,300,16,47,4,4594,3555,14,15,6,1,True,True,-5.371022,130.633586,"Jl. Laboratorium No. 51, Jawa Tengah",True,True
+74,ID-JT,Lab Kombinasi Jawa Tengah 2,Kombinasi,Swasta,283,848,216,2,3180,7035,11,3,22,1,True,True,-8.7217,105.729867,"Jl. Laboratorium No. 80, Jawa Tengah",False,False
+75,ID-JT,Lab PCR Jawa Tengah 3,PCR,Pemerintah,269,15,84,9,645,880,19,5,13,4,True,False,-1.937115,134.703025,"Jl. Laboratorium No. 64, Jawa Tengah",False,True
+76,ID-JT,Lab PCR Jawa Tengah 4,PCR,Universitas,605,159,73,10,631,6973,14,4,16,3,False,False,-6.097953,97.802863,"Jl. Laboratorium No. 90, Jawa Tengah",False,False
+77,ID-JT,Lab PCR Jawa Tengah 5,PCR,Swasta,953,156,62,9,4532,8200,4,5,19,2,True,False,-1.495127,121.599973,"Jl. Laboratorium No. 2, Jawa Tengah",True,True
+78,ID-JT,Lab PCR Jawa Tengah 6,PCR,Swasta,201,197,46,8,2994,4886,5,11,12,2,True,True,4.082461,120.649789,"Jl. Laboratorium No. 98, Jawa Tengah",True,False
+79,ID-JT,Lab Antigen Jawa Tengah 7,Antigen,Swasta,0,862,75,0,2782,5674,8,5,24,4,False,True,-4.082238,106.932741,"Jl. Laboratorium No. 90, Jawa Tengah",True,False
+80,ID-JT,Lab PCR Jawa Tengah 8,PCR,Pemerintah,563,18,40,9,4922,9841,10,9,23,1,True,False,-2.887267,134.995039,"Jl. Laboratorium No. 60, Jawa Tengah",True,True
+81,ID-JT,Lab PCR Jawa Tengah 9,PCR,Universitas,616,133,21,5,2306,5555,20,9,8,3,False,False,-0.798974,137.367539,"Jl. Laboratorium No. 43, Jawa Tengah",False,True
+82,ID-JT,Lab Kombinasi Jawa Tengah 10,Kombinasi,Swasta,428,581,96,4,2418,5159,3,11,9,2,False,True,2.273378,100.826881,"Jl. Laboratorium No. 75, Jawa Tengah",True,True
+83,ID-JT,Lab Antigen Jawa Tengah 11,Antigen,Swasta,0,1719,4,0,4750,9693,20,14,24,1,True,False,-0.027394,137.153015,"Jl. Laboratorium No. 40, Jawa Tengah",True,True
+84,ID-JT,Lab PCR Jawa Tengah 12,PCR,Universitas,666,72,56,3,2235,5444,18,9,10,4,True,False,-2.279759,113.898568,"Jl. Laboratorium No. 95, Jawa Tengah",False,False
+85,ID-YO,Lab Antigen Yogyakarta 1,Antigen,Pemerintah,0,935,88,0,1194,8997,11,5,24,1,False,False,-6.851925,132.765302,"Jl. Laboratorium No. 54, Yogyakarta",True,False
+86,ID-YO,Lab Antigen Yogyakarta 2,Antigen,Pemerintah,0,743,96,0,3047,3103,8,2,24,2,False,False,-10.286785,111.239819,"Jl. Laboratorium No. 14, Yogyakarta",True,True
+87,ID-JI,Lab PCR Jawa Timur 1,PCR,Swasta,401,62,62,10,3580,3305,13,14,11,3,False,True,-1.84765,133.446329,"Jl. Laboratorium No. 12, Jawa Timur",False,True
+88,ID-JI,Lab PCR Jawa Timur 2,PCR,Swasta,402,154,44,9,4007,6940,18,8,16,1,True,False,-6.21262,134.160211,"Jl. Laboratorium No. 98, Jawa Timur",True,True
+89,ID-JI,Lab PCR Jawa Timur 3,PCR,Pemerintah,395,49,22,2,2321,9117,19,2,16,2,False,True,5.182563,99.836954,"Jl. Laboratorium No. 39, Jawa Timur",False,False
+90,ID-JI,Lab PCR Jawa Timur 4,PCR,Pemerintah,178,191,44,2,3389,9638,7,10,17,4,True,False,-6.726579,110.26861,"Jl. Laboratorium No. 59, Jawa Timur",True,False
+91,ID-JI,Lab Antibodi Jawa Timur 5,Antibodi,Pemerintah,0,0,493,0,3107,5966,12,4,24,2,True,False,-8.100024,117.450242,"Jl. Laboratorium No. 89, Jawa Timur",True,True
+92,ID-JI,Lab Antigen Jawa Timur 6,Antigen,Swasta,0,1290,11,0,3929,3095,18,15,24,3,False,True,-4.626168,120.899732,"Jl. Laboratorium No. 44, Jawa Timur",False,True
+93,ID-JI,Lab Antigen Jawa Timur 7,Antigen,Universitas,0,1368,49,0,1597,4256,17,6,24,1,True,False,-9.220984,136.556511,"Jl. Laboratorium No. 32, Jawa Timur",False,True
+94,ID-JI,Lab Antibodi Jawa Timur 8,Antibodi,Pemerintah,0,0,390,0,2707,2417,6,8,24,4,True,False,-6.554597,125.649803,"Jl. Laboratorium No. 23, Jawa Timur",False,False
+95,ID-JI,Lab PCR Jawa Timur 9,PCR,Pemerintah,969,161,83,4,1534,2054,13,6,7,3,True,True,-1.967795,122.952901,"Jl. Laboratorium No. 43, Jawa Timur",False,False
+96,ID-JI,Lab Antigen Jawa Timur 10,Antigen,Pemerintah,0,1304,34,0,1787,8129,11,2,24,2,False,False,2.233045,140.552655,"Jl. Laboratorium No. 82, Jawa Timur",True,False
+97,ID-JI,Lab Antigen Jawa Timur 11,Antigen,Swasta,0,459,95,0,274,2812,8,9,24,3,True,False,-1.539561,110.53838,"Jl. Laboratorium No. 28, Jawa Timur",False,True
+98,ID-JI,Lab Antigen Jawa Timur 12,Antigen,Swasta,0,309,33,0,2992,2289,11,4,24,3,False,False,-7.447547,99.420847,"Jl. Laboratorium No. 12, Jawa Timur",False,False
+99,ID-JI,Lab PCR Jawa Timur 13,PCR,Pemerintah,271,65,75,7,4514,9292,5,11,18,1,True,True,2.250983,121.68856,"Jl. Laboratorium No. 19, Jawa Timur",False,False
+100,ID-BT,Lab Antibodi Banten 1,Antibodi,Swasta,0,0,415,0,2315,2387,5,14,24,1,False,True,-7.46668,106.67921,"Jl. Laboratorium No. 3, Banten",False,False
+101,ID-BT,Lab Antigen Banten 2,Antigen,Swasta,0,677,66,0,149,9807,3,3,24,2,True,False,-9.201323,139.866885,"Jl. Laboratorium No. 30, Banten",True,True
+102,ID-BT,Lab PCR Banten 3,PCR,Swasta,525,53,9,5,3779,3004,6,14,14,1,True,True,1.703933,126.24077,"Jl. Laboratorium No. 11, Banten",True,False
+103,ID-BT,Lab Antibodi Banten 4,Antibodi,Swasta,0,0,362,0,2661,6875,4,8,24,4,True,False,-1.949987,124.31317,"Jl. Laboratorium No. 91, Banten",True,False
+104,ID-BT,Lab PCR Banten 5,PCR,Swasta,338,47,4,3,3940,4257,14,7,6,2,True,True,-3.580801,135.617404,"Jl. Laboratorium No. 53, Banten",True,True
+105,ID-BA,Lab Antigen Bali 1,Antigen,Pemerintah,0,812,4,0,2162,9851,15,5,24,4,False,False,-10.606231,127.333693,"Jl. Laboratorium No. 27, Bali",True,True
+106,ID-BA,Lab Kombinasi Bali 2,Kombinasi,Pemerintah,100,218,191,4,607,2340,15,8,8,4,False,False,4.191897,124.501034,"Jl. Laboratorium No. 19, Bali",False,False
+107,ID-BA,Lab Kombinasi Bali 3,Kombinasi,Swasta,179,435,295,3,1710,8979,5,12,18,1,True,False,-8.392631,139.729814,"Jl. Laboratorium No. 41, Bali",False,False
+108,ID-BA,Lab PCR Bali 4,PCR,Swasta,662,92,12,5,4069,3132,18,7,21,3,False,True,-6.197658,95.289806,"Jl. Laboratorium No. 99, Bali",True,True
+109,ID-BA,Lab Kombinasi Bali 5,Kombinasi,Swasta,425,987,123,3,4074,4965,15,12,12,4,True,True,-4.041682,126.985751,"Jl. Laboratorium No. 43, Bali",False,False
+110,ID-BA,Lab Kombinasi Bali 6,Kombinasi,Swasta,438,557,265,4,2803,8765,18,10,8,1,False,False,-7.373094,122.876948,"Jl. Laboratorium No. 36, Bali",True,False
+111,ID-BA,Lab Antigen Bali 7,Antigen,Swasta,0,268,65,0,1135,2050,19,6,24,3,True,False,-6.412594,130.920663,"Jl. Laboratorium No. 30, Bali",False,False
+112,ID-BA,Lab PCR Bali 8,PCR,Swasta,195,136,67,9,4448,8248,19,10,9,2,True,False,-9.080317,115.097767,"Jl. Laboratorium No. 65, Bali",True,False
+113,ID-NB,Lab PCR Nusa Tenggara Barat 1,PCR,TNI/Polri,162,85,86,2,3003,8764,6,6,16,4,True,True,-7.873651,100.279092,"Jl. Laboratorium No. 44, Nusa Tenggara Barat",False,False
+114,ID-NB,Lab Kombinasi Nusa Tenggara Barat 2,Kombinasi,Pemerintah,161,624,60,5,3049,9341,19,6,11,1,True,False,-0.9699,99.398019,"Jl. Laboratorium No. 13, Nusa Tenggara Barat",True,False
+115,ID-NB,Lab Antibodi Nusa Tenggara Barat 3,Antibodi,Universitas,0,0,471,0,994,1259,17,11,24,2,True,False,-4.313519,102.318647,"Jl. Laboratorium No. 5, Nusa Tenggara Barat",False,False
+116,ID-NB,Lab PCR Nusa Tenggara Barat 4,PCR,Swasta,832,74,2,5,3703,3862,8,8,13,1,True,True,-1.894161,137.958985,"Jl. Laboratorium No. 52, Nusa Tenggara Barat",True,False
+117,ID-NB,Lab Kombinasi Nusa Tenggara Barat 5,Kombinasi,Pemerintah,445,797,226,3,3536,6529,12,12,20,4,True,True,-8.801628,140.371994,"Jl. Laboratorium No. 100, Nusa Tenggara Barat",False,True
+118,ID-NT,Lab Antigen Nusa Tenggara Timur 1,Antigen,Pemerintah,0,1741,77,0,2853,8994,4,2,24,1,False,False,0.240535,133.097116,"Jl. Laboratorium No. 71, Nusa Tenggara Timur",False,False
+119,ID-NT,Lab Kombinasi Nusa Tenggara Timur 2,Kombinasi,TNI/Polri,393,817,129,1,2943,2397,5,8,21,2,True,True,-1.418551,106.286827,"Jl. Laboratorium No. 7, Nusa Tenggara Timur",False,True
+120,ID-NT,Lab Kombinasi Nusa Tenggara Timur 3,Kombinasi,Swasta,497,774,232,5,4273,4456,18,9,20,4,True,False,2.926999,111.094766,"Jl. Laboratorium No. 23, Nusa Tenggara Timur",True,False
+121,ID-NT,Lab Kombinasi Nusa Tenggara Timur 4,Kombinasi,Swasta,349,154,110,1,3088,7398,12,13,21,3,False,False,2.921838,138.029171,"Jl. Laboratorium No. 14, Nusa Tenggara Timur",False,False
+122,ID-NT,Lab Antigen Nusa Tenggara Timur 5,Antigen,Swasta,0,1284,62,0,1888,6975,14,3,24,3,False,False,4.468763,108.421722,"Jl. Laboratorium No. 20, Nusa Tenggara Timur",True,True
+123,ID-KB,Lab PCR Kalimantan Barat 1,PCR,Swasta,351,75,71,4,1516,5092,16,5,7,2,True,True,-2.268986,103.435819,"Jl. Laboratorium No. 42, Kalimantan Barat",False,True
+124,ID-KB,Lab PCR Kalimantan Barat 2,PCR,Pemerintah,337,167,76,6,965,7747,10,14,9,4,True,False,-1.749261,111.613552,"Jl. Laboratorium No. 71, Kalimantan Barat",False,False
+125,ID-KT,Lab PCR Kalimantan Tengah 1,PCR,Swasta,765,45,71,7,2321,3693,9,3,21,1,False,False,-3.376249,122.257451,"Jl. Laboratorium No. 43, Kalimantan Tengah",True,True
+126,ID-KT,Lab Antigen Kalimantan Tengah 2,Antigen,Swasta,0,584,92,0,3590,847,18,6,24,2,True,True,-0.497192,116.487401,"Jl. Laboratorium No. 100, Kalimantan Tengah",True,False
+127,ID-KT,Lab PCR Kalimantan Tengah 3,PCR,Pemerintah,343,186,28,3,4750,9899,20,15,17,4,True,False,-4.095678,136.156343,"Jl. Laboratorium No. 78, Kalimantan Tengah",True,False
+128,ID-KT,Lab Antigen Kalimantan Tengah 4,Antigen,Swasta,0,711,27,0,3195,8765,19,13,24,2,True,True,0.395549,99.98229,"Jl. Laboratorium No. 53, Kalimantan Tengah",False,True
+129,ID-KT,Lab Antigen Kalimantan Tengah 5,Antigen,Swasta,0,772,10,0,3248,6837,19,14,24,1,True,False,1.35329,139.34685,"Jl. Laboratorium No. 31, Kalimantan Tengah",False,False
+130,ID-KS,Lab Kombinasi Kalimantan Selatan 1,Kombinasi,Swasta,108,681,248,4,1081,8749,10,15,13,1,False,True,-2.364128,116.438696,"Jl. Laboratorium No. 45, Kalimantan Selatan",False,True
+131,ID-KS,Lab PCR Kalimantan Selatan 2,PCR,Pemerintah,185,133,92,9,3589,4010,19,7,23,3,False,False,1.054228,130.208346,"Jl. Laboratorium No. 75, Kalimantan Selatan",False,False
+132,ID-KI,Lab Kombinasi Kalimantan Timur 1,Kombinasi,Pemerintah,485,145,105,3,4301,9683,4,12,19,3,True,True,-8.238368,110.347908,"Jl. Laboratorium No. 86, Kalimantan Timur",False,False
+133,ID-KI,Lab Kombinasi Kalimantan Timur 2,Kombinasi,Swasta,209,878,189,5,3315,7769,4,6,23,2,True,True,-8.274555,107.905931,"Jl. Laboratorium No. 22, Kalimantan Timur",False,True
+134,ID-KI,Lab Kombinasi Kalimantan Timur 3,Kombinasi,Swasta,416,325,232,4,1166,4908,3,4,9,3,True,False,-1.254366,117.258219,"Jl. Laboratorium No. 68, Kalimantan Timur",False,True
+135,ID-KI,Lab Kombinasi Kalimantan Timur 4,Kombinasi,Pemerintah,407,846,282,4,4142,2383,11,11,21,1,False,False,-4.293029,138.571794,"Jl. Laboratorium No. 47, Kalimantan Timur",True,True
+136,ID-KU,Lab Antibodi Kalimantan Utara 1,Antibodi,Swasta,0,0,151,0,125,1654,6,10,24,3,True,False,-0.305777,114.505299,"Jl. Laboratorium No. 10, Kalimantan Utara",True,False
+137,ID-KU,Lab Antigen Kalimantan Utara 2,Antigen,Swasta,0,1193,78,0,2825,8988,7,3,24,1,False,False,-1.159905,101.825754,"Jl. Laboratorium No. 51, Kalimantan Utara",True,False
+138,ID-KU,Lab Kombinasi Kalimantan Utara 3,Kombinasi,TNI/Polri,127,935,63,5,2910,2172,17,15,23,4,False,False,-5.715079,126.692172,"Jl. Laboratorium No. 57, Kalimantan Utara",False,True
+139,ID-KU,Lab Antibodi Kalimantan Utara 4,Antibodi,Swasta,0,0,166,0,352,3926,8,13,24,2,False,False,2.63513,115.533634,"Jl. Laboratorium No. 66, Kalimantan Utara",True,True
+140,ID-SA,Lab Antigen Sulawesi Utara 1,Antigen,Swasta,0,1538,78,0,4080,2184,7,3,24,3,False,False,-4.681872,124.359901,"Jl. Laboratorium No. 38, Sulawesi Utara",False,True
+141,ID-SA,Lab PCR Sulawesi Utara 2,PCR,Pemerintah,879,157,69,9,297,5263,7,13,16,1,False,False,-1.156437,102.971433,"Jl. Laboratorium No. 50, Sulawesi Utara",False,False
+142,ID-SA,Lab Antigen Sulawesi Utara 3,Antigen,Pemerintah,0,1126,77,0,3705,8539,5,9,24,3,True,True,3.323793,96.279909,"Jl. Laboratorium No. 64, Sulawesi Utara",True,False
+143,ID-SA,Lab PCR Sulawesi Utara 4,PCR,Pemerintah,649,165,78,6,2190,6542,5,12,15,4,True,True,-9.960387,112.964264,"Jl. Laboratorium No. 32, Sulawesi Utara",False,True
+144,ID-ST,Lab PCR Sulawesi Tengah 1,PCR,Pemerintah,209,85,71,6,457,2369,10,3,12,2,False,False,-2.885232,108.126426,"Jl. Laboratorium No. 35, Sulawesi Tengah",True,False
+145,ID-ST,Lab Kombinasi Sulawesi Tengah 2,Kombinasi,Swasta,442,697,281,5,2780,2876,12,13,14,1,False,True,-0.982209,135.059511,"Jl. Laboratorium No. 4, Sulawesi Tengah",True,True
+146,ID-SN,Lab Antigen Sulawesi Selatan 1,Antigen,Swasta,0,1582,71,0,4364,665,17,6,24,3,True,True,-0.605002,136.877531,"Jl. Laboratorium No. 58, Sulawesi Selatan",False,True
+147,ID-SN,Lab PCR Sulawesi Selatan 2,PCR,Universitas,824,161,64,8,4628,3060,13,2,11,3,True,False,1.374259,139.897764,"Jl. Laboratorium No. 46, Sulawesi Selatan",False,False
+148,ID-SN,Lab Antibodi Sulawesi Selatan 3,Antibodi,Pemerintah,0,0,193,0,4876,9836,5,6,24,2,True,True,-6.419897,96.42154,"Jl. Laboratorium No. 94, Sulawesi Selatan",True,False
+149,ID-SN,Lab Antigen Sulawesi Selatan 4,Antigen,Universitas,0,1538,75,0,4240,5550,17,7,24,3,True,False,-4.304434,131.86372,"Jl. Laboratorium No. 15, Sulawesi Selatan",False,False
+150,ID-SN,Lab Kombinasi Sulawesi Selatan 5,Kombinasi,Swasta,179,122,263,2,2329,4811,3,14,18,4,True,True,-5.272473,104.776633,"Jl. Laboratorium No. 38, Sulawesi Selatan",False,False
+151,ID-SN,Lab Antigen Sulawesi Selatan 6,Antigen,Pemerintah,0,1298,51,0,4147,1623,8,3,24,1,False,False,4.358046,119.330373,"Jl. Laboratorium No. 60, Sulawesi Selatan",True,False
+152,ID-SG,Lab Kombinasi Sulawesi Tenggara 1,Kombinasi,Pemerintah,175,702,272,4,2224,1888,8,15,14,4,True,False,-0.295538,108.455537,"Jl. Laboratorium No. 1, Sulawesi Tenggara",False,True
+153,ID-SG,Lab Kombinasi Sulawesi Tenggara 2,Kombinasi,Swasta,279,205,76,1,2784,2874,15,7,13,4,True,False,-7.032782,140.270124,"Jl. Laboratorium No. 10, Sulawesi Tenggara",True,False
+154,ID-SG,Lab Antigen Sulawesi Tenggara 3,Antigen,Swasta,0,1831,57,0,1374,648,14,2,24,3,False,False,-3.473787,107.569069,"Jl. Laboratorium No. 19, Sulawesi Tenggara",False,False
+155,ID-SG,Lab PCR Sulawesi Tenggara 4,PCR,Pemerintah,897,112,13,5,1210,5112,4,3,8,2,True,False,-5.146752,115.496301,"Jl. Laboratorium No. 69, Sulawesi Tenggara",True,False
+156,ID-SG,Lab PCR Sulawesi Tenggara 5,PCR,Pemerintah,476,13,31,9,1579,4454,10,7,17,3,False,False,-0.629811,103.48776,"Jl. Laboratorium No. 91, Sulawesi Tenggara",False,False
+157,ID-GO,Lab Antibodi Gorontalo 1,Antibodi,Pemerintah,0,0,117,0,1061,4409,9,12,24,3,False,True,0.436,112.03231,"Jl. Laboratorium No. 29, Gorontalo",True,False
+158,ID-GO,Lab PCR Gorontalo 2,PCR,TNI/Polri,260,127,53,5,3683,8955,14,3,16,3,True,True,-2.794952,97.448313,"Jl. Laboratorium No. 48, Gorontalo",False,False
+159,ID-GO,Lab Kombinasi Gorontalo 3,Kombinasi,Universitas,101,295,76,2,2196,4124,16,8,24,1,True,True,-4.882771,118.426772,"Jl. Laboratorium No. 46, Gorontalo",False,False
+160,ID-GO,Lab Kombinasi Gorontalo 4,Kombinasi,Pemerintah,302,577,218,3,1454,7932,14,12,8,1,True,True,-9.06704,119.679909,"Jl. Laboratorium No. 47, Gorontalo",False,True
+161,ID-SR,Lab Antigen Sulawesi Barat 1,Antigen,Swasta,0,1308,42,0,4678,4249,4,10,24,2,True,True,-3.559022,98.225031,"Jl. Laboratorium No. 64, Sulawesi Barat",True,False
+162,ID-SR,Lab Antigen Sulawesi Barat 2,Antigen,Pemerintah,0,1403,70,0,450,9683,18,6,24,3,False,True,-6.327371,124.058623,"Jl. Laboratorium No. 22, Sulawesi Barat",True,False
+163,ID-SR,Lab Kombinasi Sulawesi Barat 3,Kombinasi,Pemerintah,428,664,111,1,4795,3943,4,8,9,2,True,False,-4.624147,123.900643,"Jl. Laboratorium No. 20, Sulawesi Barat",False,True
+164,ID-MA,Lab PCR Maluku 1,PCR,Swasta,250,115,99,6,820,8250,20,12,10,2,False,False,4.944235,133.70935,"Jl. Laboratorium No. 85, Maluku",False,True
+165,ID-MA,Lab Antigen Maluku 2,Antigen,Swasta,0,362,90,0,4653,4281,8,7,24,3,True,True,-9.616936,128.053017,"Jl. Laboratorium No. 65, Maluku",True,True
+166,ID-MA,Lab PCR Maluku 3,PCR,Universitas,354,57,79,5,2443,7577,7,4,12,4,False,True,-6.699677,132.407055,"Jl. Laboratorium No. 62, Maluku",False,True
+167,ID-MU,Lab PCR Maluku Utara 1,PCR,Pemerintah,929,43,46,3,2245,8368,10,10,15,2,True,True,-4.202743,136.031791,"Jl. Laboratorium No. 21, Maluku Utara",False,False
+168,ID-MU,Lab Kombinasi Maluku Utara 2,Kombinasi,TNI/Polri,425,847,182,1,3439,811,13,4,19,3,False,True,-1.455196,108.574474,"Jl. Laboratorium No. 100, Maluku Utara",False,False
+169,ID-MU,Lab Kombinasi Maluku Utara 3,Kombinasi,Swasta,407,211,54,1,3742,6079,18,10,12,4,False,False,-1.732737,140.772408,"Jl. Laboratorium No. 36, Maluku Utara",True,False
+170,ID-MU,Lab Antigen Maluku Utara 4,Antigen,Swasta,0,1468,6,0,1128,5501,20,5,24,4,False,False,-7.730711,113.152018,"Jl. Laboratorium No. 28, Maluku Utara",False,False
+171,ID-PA,Lab PCR Papua 1,PCR,Swasta,557,42,91,10,1159,8127,14,15,20,4,True,True,2.489967,120.611864,"Jl. Laboratorium No. 98, Papua",True,True
+172,ID-PA,Lab Antigen Papua 2,Antigen,Pemerintah,0,606,9,0,1934,4589,20,8,24,1,False,False,-8.325385,135.740382,"Jl. Laboratorium No. 95, Papua",False,False
+173,ID-PB,Lab Antibodi Papua Barat 1,Antibodi,Swasta,0,0,181,0,1445,2717,13,6,24,3,False,True,-0.480286,135.131782,"Jl. Laboratorium No. 49, Papua Barat",True,True
+174,ID-PB,Lab PCR Papua Barat 2,PCR,Pemerintah,521,144,13,9,4759,6940,9,5,18,1,True,False,5.809502,109.446018,"Jl. Laboratorium No. 76, Papua Barat",False,False
+175,ID-PB,Lab Antigen Papua Barat 3,Antigen,Pemerintah,0,1085,58,0,4915,4720,20,12,24,3,False,True,4.150666,134.017247,"Jl. Laboratorium No. 96, Papua Barat",False,False
