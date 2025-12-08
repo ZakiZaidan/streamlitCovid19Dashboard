@@ -51,6 +51,9 @@ class SupabaseConfig:
         self.cache_ttl = int(os.getenv('CACHE_TTL', '3600'))
         self.debug_mode = os.getenv('DEBUG_MODE', 'false').lower() == 'true'
         
+        # Force REST API mode if PostgreSQL connection fails (for serverless environments)
+        self.use_rest_api_fallback = os.getenv('USE_REST_API', 'false').lower() == 'true'
+        
         # Debug: Check if secrets are loaded (after debug_mode is set)
         if hasattr(st, 'secrets') and self.debug_mode:
             st.write("🔍 Debug: Checking secrets...")
@@ -253,16 +256,45 @@ class SupabaseConfig:
                 if self.database_url:
                     if self.debug_mode:
                         st.info("🔄 Trying direct connection...")
+                    
+                    # Parse URL to get components
+                    parsed = urlparse(self.database_url)
+                    hostname = parsed.hostname
+                    
+                    if self.debug_mode:
+                        st.info(f"🔍 Hostname: {hostname}")
+                    
                     # Use connection string if available and enforce SSL
                     conn_str = self._with_sslmode(self.database_url)
-                    # Try IPv4-first connection to avoid IPv6 issues
-                    conn = self._connect_via_ipv4(conn_str)
-                    if conn is None:
-                        conn = psycopg2.connect(conn_str, connect_timeout=10)
-                    if conn:
-                        if self.debug_mode:
-                            st.success("✅ Connected via direct connection!")
-                        return conn
+                    
+                    # Try multiple connection methods
+                    connection_methods = [
+                        ("IPv4 forced", lambda: self._connect_via_ipv4(conn_str)),
+                        ("Standard SSL", lambda: psycopg2.connect(conn_str, connect_timeout=15)),
+                        ("With keepalive", lambda: psycopg2.connect(
+                            conn_str, 
+                            connect_timeout=15,
+                            keepalives=1,
+                            keepalives_idle=30,
+                            keepalives_interval=10,
+                            keepalives_count=5
+                        ))
+                    ]
+                    
+                    for method_name, connect_func in connection_methods:
+                        try:
+                            if self.debug_mode:
+                                st.info(f"🔄 Trying {method_name}...")
+                            conn = connect_func()
+                            if conn:
+                                if self.debug_mode:
+                                    st.success(f"✅ Connected via {method_name}!")
+                                return conn
+                        except Exception as e:
+                            if self.debug_mode:
+                                st.warning(f"⚠️ {method_name} failed: {str(e)[:100]}")
+                            continue
+                    
                 else:
                     # Use individual parameters
                     conn = psycopg2.connect(
@@ -272,7 +304,7 @@ class SupabaseConfig:
                         password=self.db_password,
                         port=self.db_port,
                         sslmode='require',  # Supabase requires SSL
-                        connect_timeout=10
+                        connect_timeout=15
                     )
                     return conn
             except Exception as e:
@@ -286,6 +318,8 @@ class SupabaseConfig:
         # Show final error if all attempts failed
         if last_error and self.debug_mode:
             st.error(f"❌ All connection attempts failed. Last error: {last_error}")
+            st.error("💡 Suggestion: If DNS resolution fails, this might be a network issue in Streamlit Cloud.")
+            st.error("💡 Try: 1) Check if Supabase project is active, 2) Verify connection string format, 3) Contact Supabase support")
         
         return None
     
