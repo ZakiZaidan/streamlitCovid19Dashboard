@@ -113,7 +113,9 @@ class SupabaseConfig:
         """
         Get connection string using Supabase connection pooler.
         Pooler uses port 6543 and is more reliable for serverless environments.
-        Format: postgresql://postgres:[PASSWORD]@[PROJECT_REF].pooler.supabase.com:6543/postgres
+        Handles both formats:
+        - Direct: db.xbriqveiicnsxpuijsfx.supabase.co:5432
+        - Already pooler: xbriqveiicnsxpuijsfx.pooler.supabase.com:6543
         """
         if not self.database_url:
             return None
@@ -121,24 +123,54 @@ class SupabaseConfig:
         try:
             # Parse the connection URL
             parsed = urlparse(self.database_url)
-            
-            # Extract project reference from hostname
-            # Format: db.xbriqveiicnsxpuijsfx.supabase.co
             hostname = parsed.hostname
-            if not hostname or "supabase.co" not in hostname:
+            
+            if not hostname or "supabase" not in hostname:
                 if self.debug_mode:
                     st.warning("⚠️ Invalid Supabase hostname format")
                 return None
             
-            # Extract project ref (the part between db. and .supabase.co)
+            # Check if URL already uses pooler
+            if "pooler.supabase.com" in hostname:
+                # Already using pooler, just ensure port is 6543 and sslmode is set
+                if self.debug_mode:
+                    st.info(f"✅ URL already uses pooler: {hostname}")
+                
+                # Extract project ref for validation
+                project_ref = hostname.replace(".pooler.supabase.com", "")
+                if not project_ref or len(project_ref) < 10:
+                    if self.debug_mode:
+                        st.error(f"❌ Invalid project reference in pooler hostname: {hostname}")
+                    return None
+                
+                # Ensure port is 6543
+                port = parsed.port or 6543
+                if port != 6543:
+                    if self.debug_mode:
+                        st.warning(f"⚠️ Pooler URL has wrong port ({port}), correcting to 6543")
+                
+                # Rebuild URL with correct port
+                pooler_url = f"postgresql://{parsed.username}:{parsed.password}@{hostname}:6543{parsed.path}"
+                pooler_url = self._with_sslmode(pooler_url)
+                
+                if self.debug_mode:
+                    st.info(f"🔗 Using pooler URL: {hostname}:6543")
+                    st.info(f"📋 Project reference: {project_ref}")
+                
+                return pooler_url
+            
+            # Extract project reference from db.supabase.co format
             if hostname.startswith("db."):
                 project_ref = hostname.replace("db.", "").replace(".supabase.co", "")
+            elif ".supabase.co" in hostname:
+                # Handle other supabase.co formats
+                project_ref = hostname.replace(".supabase.co", "")
             else:
                 if self.debug_mode:
-                    st.warning(f"⚠️ Hostname doesn't start with 'db.': {hostname}")
+                    st.warning(f"⚠️ Cannot extract project ref from hostname: {hostname}")
                 return None
             
-            # Build pooler URL
+            # Build pooler URL from direct connection URL
             pooler_host = f"{project_ref}.pooler.supabase.com"
             pooler_url = f"postgresql://{parsed.username}:{parsed.password}@{pooler_host}:6543{parsed.path}"
             
@@ -146,7 +178,7 @@ class SupabaseConfig:
             pooler_url = self._with_sslmode(pooler_url)
             
             if self.debug_mode:
-                st.info(f"🔗 Pooler URL: {pooler_host}:6543")
+                st.info(f"🔗 Converted to pooler URL: {pooler_host}:6543")
             
             return pooler_url
         except Exception as e:
@@ -191,6 +223,13 @@ class SupabaseConfig:
         """
         last_error = None
         
+        # Check if URL already uses pooler
+        is_already_pooler = False
+        if self.database_url and "pooler.supabase.com" in self.database_url:
+            is_already_pooler = True
+            if self.debug_mode:
+                st.info("ℹ️ URL already uses connection pooler")
+        
         # Try connection pooler first (better for Streamlit Cloud)
         if self.database_url:
             pooler_url = self._get_pooler_connection_string()
@@ -208,37 +247,41 @@ class SupabaseConfig:
                     if self.debug_mode:
                         st.error(f"❌ Pooler connection failed: {e}")
         
-        # Fallback to direct connection
-        try:
-            if self.database_url:
-                if self.debug_mode:
-                    st.info("🔄 Trying direct connection...")
-                # Use connection string if available and enforce SSL
-                conn_str = self._with_sslmode(self.database_url)
-                # Try IPv4-first connection to avoid IPv6 issues
-                conn = self._connect_via_ipv4(conn_str)
-                if conn is None:
-                    conn = psycopg2.connect(conn_str, connect_timeout=10)
-                if conn:
+        # Fallback to direct connection (only if not already using pooler)
+        if not is_already_pooler:
+            try:
+                if self.database_url:
                     if self.debug_mode:
-                        st.success("✅ Connected via direct connection!")
+                        st.info("🔄 Trying direct connection...")
+                    # Use connection string if available and enforce SSL
+                    conn_str = self._with_sslmode(self.database_url)
+                    # Try IPv4-first connection to avoid IPv6 issues
+                    conn = self._connect_via_ipv4(conn_str)
+                    if conn is None:
+                        conn = psycopg2.connect(conn_str, connect_timeout=10)
+                    if conn:
+                        if self.debug_mode:
+                            st.success("✅ Connected via direct connection!")
+                        return conn
+                else:
+                    # Use individual parameters
+                    conn = psycopg2.connect(
+                        host=self.db_host,
+                        database=self.db_name,
+                        user=self.db_user,
+                        password=self.db_password,
+                        port=self.db_port,
+                        sslmode='require',  # Supabase requires SSL
+                        connect_timeout=10
+                    )
                     return conn
-            else:
-                # Use individual parameters
-                conn = psycopg2.connect(
-                    host=self.db_host,
-                    database=self.db_name,
-                    user=self.db_user,
-                    password=self.db_password,
-                    port=self.db_port,
-                    sslmode='require',  # Supabase requires SSL
-                    connect_timeout=10
-                )
-                return conn
-        except Exception as e:
-            last_error = f"Direct: {str(e)}"
+            except Exception as e:
+                last_error = f"Direct: {str(e)}"
+                if self.debug_mode:
+                    st.error(f"❌ Direct connection failed: {e}")
+        else:
             if self.debug_mode:
-                st.error(f"❌ Direct connection failed: {e}")
+                st.warning("⚠️ Skipping direct connection (URL already uses pooler)")
         
         # Show final error if all attempts failed
         if last_error and self.debug_mode:
