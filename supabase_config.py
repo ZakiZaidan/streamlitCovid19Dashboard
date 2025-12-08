@@ -9,23 +9,8 @@ from supabase import create_client, Client
 from dotenv import load_dotenv
 import pandas as pd
 from typing import Optional, Tuple
-import socket
-from urllib.parse import urlparse
 
 # Load environment variables
-# 1) Prefer Streamlit secrets (for Streamlit Cloud)
-try:
-    if hasattr(st, "secrets"):
-        for k, v in st.secrets.items():
-            # Skip nested structures; only flat key/value expected
-            if isinstance(v, (dict, list)):
-                continue
-            os.environ[k] = str(v)
-except Exception:
-    # If not on Streamlit, ignore
-    pass
-
-# 2) Fallback to .env (for local development)
 load_dotenv()
 
 class SupabaseConfig:
@@ -51,27 +36,8 @@ class SupabaseConfig:
         self.cache_ttl = int(os.getenv('CACHE_TTL', '3600'))
         self.debug_mode = os.getenv('DEBUG_MODE', 'false').lower() == 'true'
         
-        # Force REST API mode if PostgreSQL connection fails (for serverless environments)
-        self.use_rest_api_fallback = os.getenv('USE_REST_API', 'false').lower() == 'true'
-        
-        # Debug: Check if secrets are loaded (after debug_mode is set)
-        if hasattr(st, 'secrets') and self.debug_mode:
-            st.write("🔍 Debug: Checking secrets...")
-            st.write(f"SUPABASE_URL: {'✅ Set' if self.url else '❌ Missing'}")
-            st.write(f"SUPABASE_ANON_KEY: {'✅ Set' if self.anon_key else '❌ Missing'}")
-            st.write(f"SUPABASE_DATABASE_URL: {'✅ Set' if self.database_url else '❌ Missing'}")
-        
     def validate_config(self) -> bool:
         """Validate that all required configuration is present"""
-        # If connection string is provided, that's sufficient
-        if self.database_url:
-            minimal = [self.url, self.anon_key]
-            missing = [field for field in minimal if not field]
-            if missing:
-                st.error("Missing Supabase URL or ANON key. Please check configuration.")
-                return False
-            return True
-
         required_fields = [
             self.url, self.anon_key, self.db_host, 
             self.db_password, self.db_user
@@ -80,8 +46,8 @@ class SupabaseConfig:
         missing_fields = [field for field in required_fields if not field]
         
         if missing_fields:
-            st.error("Missing Supabase configuration. Please check your .env or Streamlit secrets.")
-            st.info("Required fields: SUPABASE_URL, SUPABASE_ANON_KEY, SUPABASE_DB_HOST, SUPABASE_DB_PASSWORD, SUPABASE_DB_USER (or SUPABASE_DATABASE_URL)")
+            st.error(f"Missing Supabase configuration. Please check your .env file.")
+            st.info("Required fields: SUPABASE_URL, SUPABASE_ANON_KEY, SUPABASE_DB_HOST, SUPABASE_DB_PASSWORD, SUPABASE_DB_USER")
             return False
         
         return True
@@ -100,286 +66,47 @@ class SupabaseConfig:
             st.error(f"Failed to create Supabase client: {e}")
             return None
     
-    def _with_sslmode(self, url: str) -> str:
-        """Ensure connection string enforces SSL"""
-        if not url:
-            return url
-        # If sslmode already present, return as is
-        if "sslmode=" in url:
-            return url
-        # Preserve existing query params
-        if "?" in url:
-            return url + "&sslmode=require"
-        return url + "?sslmode=require"
-    
-    def _get_pooler_connection_string(self) -> Optional[str]:
-        """
-        Get connection string using Supabase connection pooler.
-        Pooler uses port 6543 and is more reliable for serverless environments.
-        Handles both formats:
-        - Direct: db.xbriqveiicnsxpuijsfx.supabase.co:5432
-        - Already pooler: xbriqveiicnsxpuijsfx.pooler.supabase.com:6543
-        """
-        if not self.database_url:
-            return None
-        
-        try:
-            # Parse the connection URL
-            parsed = urlparse(self.database_url)
-            hostname = parsed.hostname
-            
-            if not hostname or "supabase" not in hostname:
-                if self.debug_mode:
-                    st.warning("⚠️ Invalid Supabase hostname format")
-                return None
-            
-            # Check if URL already uses pooler
-            if "pooler.supabase.com" in hostname:
-                # Already using pooler, just ensure port is 6543 and sslmode is set
-                if self.debug_mode:
-                    st.info(f"✅ URL already uses pooler: {hostname}")
-                
-                # Extract project ref for validation
-                project_ref = hostname.replace(".pooler.supabase.com", "")
-                if not project_ref or len(project_ref) < 10:
-                    if self.debug_mode:
-                        st.error(f"❌ Invalid project reference in pooler hostname: {hostname}")
-                    return None
-                
-                # Ensure port is 6543
-                port = parsed.port or 6543
-                if port != 6543:
-                    if self.debug_mode:
-                        st.warning(f"⚠️ Pooler URL has wrong port ({port}), correcting to 6543")
-                
-                # Rebuild URL with correct port
-                pooler_url = f"postgresql://{parsed.username}:{parsed.password}@{hostname}:6543{parsed.path}"
-                pooler_url = self._with_sslmode(pooler_url)
-                
-                if self.debug_mode:
-                    st.info(f"🔗 Using pooler URL: {hostname}:6543")
-                    st.info(f"📋 Project reference: {project_ref}")
-                
-                return pooler_url
-            
-            # Extract project reference from db.supabase.co format
-            if hostname.startswith("db."):
-                project_ref = hostname.replace("db.", "").replace(".supabase.co", "")
-            elif ".supabase.co" in hostname:
-                # Handle other supabase.co formats
-                project_ref = hostname.replace(".supabase.co", "")
-            else:
-                if self.debug_mode:
-                    st.warning(f"⚠️ Cannot extract project ref from hostname: {hostname}")
-                return None
-            
-            # Build pooler URL from direct connection URL
-            pooler_host = f"{project_ref}.pooler.supabase.com"
-            pooler_url = f"postgresql://{parsed.username}:{parsed.password}@{pooler_host}:6543{parsed.path}"
-            
-            # Ensure sslmode is set
-            pooler_url = self._with_sslmode(pooler_url)
-            
-            if self.debug_mode:
-                st.info(f"🔗 Converted to pooler URL: {pooler_host}:6543")
-            
-            return pooler_url
-        except Exception as e:
-            if self.debug_mode:
-                st.warning(f"⚠️ Failed to build pooler URL: {e}")
-            return None
-    
-    def _connect_via_ipv4(self, dsn_url: str) -> Optional[psycopg2.extensions.connection]:
-        """
-        Attempt to connect forcing IPv4 to avoid IPv6 issues on some platforms.
-        """
-        try:
-            parsed = urlparse(dsn_url)
-            host = parsed.hostname
-            port = parsed.port or 5432
-            user = parsed.username
-            password = parsed.password
-            dbname = (parsed.path or "/postgres").lstrip("/") or "postgres"
-
-            # Resolve only IPv4 addresses
-            addrinfo = socket.getaddrinfo(host, port, family=socket.AF_INET, type=socket.SOCK_STREAM)
-            if not addrinfo:
-                return None
-            ipv4 = addrinfo[0][4][0]
-
-            return psycopg2.connect(
-                host=host,          # keep host for SNI/ssl checks
-                hostaddr=ipv4,      # force IPv4 connection
-                port=port,
-                user=user,
-                password=password,
-                dbname=dbname,
-                sslmode="require",
-            )
-        except Exception:
-            return None
-
     def get_db_connection(self) -> Optional[psycopg2.extensions.connection]:
-        """
-        Create PostgreSQL connection to Supabase.
-        Tries connection pooler first (more reliable for serverless), then direct connection.
-        """
-        last_error = None
-        
-        # Check if URL already uses pooler
-        is_already_pooler = False
-        if self.database_url and "pooler.supabase.com" in self.database_url:
-            is_already_pooler = True
-            if self.debug_mode:
-                st.info("ℹ️ URL already uses connection pooler")
-        
-        # Try connection pooler first (better for Streamlit Cloud)
-        if self.database_url:
-            pooler_url = self._get_pooler_connection_string()
-            if pooler_url:
-                try:
-                    if self.debug_mode:
-                        st.info("🔄 Trying Supabase connection pooler...")
-                    conn = psycopg2.connect(pooler_url, connect_timeout=10)
-                    if conn:
-                        if self.debug_mode:
-                            st.success("✅ Connected via pooler!")
-                        return conn
-                except Exception as e:
-                    last_error = f"Pooler: {str(e)}"
-                    if self.debug_mode:
-                        st.error(f"❌ Pooler connection failed: {e}")
-        
-        # Fallback to direct connection (only if not already using pooler)
-        if not is_already_pooler:
-            try:
-                if self.database_url:
-                    if self.debug_mode:
-                        st.info("🔄 Trying direct connection...")
-                    
-                    # Parse URL to get components
-                    parsed = urlparse(self.database_url)
-                    hostname = parsed.hostname
-                    
-                    if self.debug_mode:
-                        st.info(f"🔍 Hostname: {hostname}")
-                    
-                    # Use connection string if available and enforce SSL
-                    conn_str = self._with_sslmode(self.database_url)
-                    
-                    # Try multiple connection methods
-                    connection_methods = [
-                        ("IPv4 forced", lambda: self._connect_via_ipv4(conn_str)),
-                        ("Standard SSL", lambda: psycopg2.connect(conn_str, connect_timeout=15)),
-                        ("With keepalive", lambda: psycopg2.connect(
-                            conn_str, 
-                            connect_timeout=15,
-                            keepalives=1,
-                            keepalives_idle=30,
-                            keepalives_interval=10,
-                            keepalives_count=5
-                        ))
-                    ]
-                    
-                    for method_name, connect_func in connection_methods:
-                        try:
-                            if self.debug_mode:
-                                st.info(f"🔄 Trying {method_name}...")
-                            conn = connect_func()
-                            if conn:
-                                if self.debug_mode:
-                                    st.success(f"✅ Connected via {method_name}!")
-                                return conn
-                        except Exception as e:
-                            if self.debug_mode:
-                                st.warning(f"⚠️ {method_name} failed: {str(e)[:100]}")
-                            continue
-                    
-                else:
-                    # Use individual parameters
-                    conn = psycopg2.connect(
-                        host=self.db_host,
-                        database=self.db_name,
-                        user=self.db_user,
-                        password=self.db_password,
-                        port=self.db_port,
-                        sslmode='require',  # Supabase requires SSL
-                        connect_timeout=15
-                    )
-                    return conn
-            except Exception as e:
-                last_error = f"Direct: {str(e)}"
-                if self.debug_mode:
-                    st.error(f"❌ Direct connection failed: {e}")
-        else:
-            if self.debug_mode:
-                st.warning("⚠️ Skipping direct connection (URL already uses pooler)")
-        
-        # Show final error if all attempts failed
-        if last_error and self.debug_mode:
-            st.error(f"❌ All connection attempts failed. Last error: {last_error}")
-            st.error("💡 Suggestion: If DNS resolution fails, this might be a network issue in Streamlit Cloud.")
-            st.error("💡 Try: 1) Check if Supabase project is active, 2) Verify connection string format, 3) Contact Supabase support")
-        
-        return None
-    
-    def query_via_rest_api(self, query: str) -> Optional[pd.DataFrame]:
-        """
-        Query database using Supabase REST API as fallback when direct PostgreSQL fails.
-        This works better in environments like Streamlit Cloud that may block direct DB connections.
-        """
+        """Create direct PostgreSQL connection to Supabase"""
         try:
-            # Use service role key for full database access
-            client = self.get_supabase_client(use_service_role=True)
-            if not client:
-                return None
+            if self.database_url:
+                # Use connection string if available
+                conn = psycopg2.connect(self.database_url)
+            else:
+                # Use individual parameters
+                conn = psycopg2.connect(
+                    host=self.db_host,
+                    database=self.db_name,
+                    user=self.db_user,
+                    password=self.db_password,
+                    port=self.db_port,
+                    sslmode='require'  # Supabase requires SSL
+                )
             
-            # For simple SELECT queries, we can use Supabase REST API
-            # Note: Complex queries with JOINs need to be handled differently
-            # This is a simplified version - for production, consider using RPC functions
-            
-            # Try to execute via RPC if available, otherwise use table queries
-            # For now, return None to indicate REST API is not fully implemented
-            # The main app should handle this gracefully
-            return None
-            
+            return conn
         except Exception as e:
+            st.error(f"Database connection error: {e}")
             if self.debug_mode:
-                st.warning(f"REST API query failed: {e}")
+                st.exception(e)
             return None
     
     def test_connection(self) -> Tuple[bool, str]:
         """Test database connection"""
         try:
-            if self.debug_mode:
-                st.info("🔍 Testing database connection...")
-            
             conn = self.get_db_connection()
             if not conn:
-                error_msg = "Failed to establish connection. Check debug messages above for details."
-                if self.debug_mode:
-                    st.error(f"❌ {error_msg}")
-                return False, error_msg
+                return False, "Failed to establish connection"
             
             # Test query
-            if self.debug_mode:
-                st.info("🔍 Testing query execution...")
             with conn.cursor() as cur:
                 cur.execute("SELECT version();")
                 version = cur.fetchone()[0]
             
             conn.close()
-            success_msg = f"Connection successful. PostgreSQL version: {version}"
-            if self.debug_mode:
-                st.success(f"✅ {success_msg}")
-            return True, success_msg
+            return True, f"Connection successful. PostgreSQL version: {version}"
             
         except Exception as e:
-            error_msg = f"Connection test failed: {str(e)}"
-            if self.debug_mode:
-                st.error(f"❌ {error_msg}")
-                st.exception(e)
-            return False, error_msg
+            return False, f"Connection test failed: {str(e)}"
     
     def get_connection_info(self) -> dict:
         """Get connection information for display"""
