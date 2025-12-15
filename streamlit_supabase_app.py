@@ -257,6 +257,7 @@ def load_all_data():
         """, conn)
         
         # Data from additional tables (with error handling)
+        # Load additional tables (only tables that are actually used)
         additional_tables = {
             'rumah_sakit': """
                 SELECT rs.*, l.nama_provinsi 
@@ -274,29 +275,6 @@ def load_all_data():
                 FROM KEBIJAKAN_PEMERINTAH kp 
                 JOIN LOKASI l ON kp.iso_code = l.iso_code
                 ORDER BY kp.tanggal_mulai DESC
-            """,
-            'ekonomi': """
-                SELECT er.*, l.nama_provinsi 
-                FROM EKONOMI_REGIONAL er 
-                JOIN LOKASI l ON er.iso_code = l.iso_code
-                ORDER BY er.tahun DESC, er.bulan DESC
-            """,
-            'testing_labs': """
-                SELECT tl.*, l.nama_provinsi 
-                FROM TESTING_LABS tl 
-                JOIN LOKASI l ON tl.iso_code = l.iso_code
-            """,
-            'cluster': """
-                SELECT cp.*, l.nama_provinsi 
-                FROM CLUSTER_PENULARAN cp 
-                JOIN LOKASI l ON cp.iso_code = l.iso_code
-                ORDER BY cp.tanggal_terdeteksi DESC
-            """,
-            'mobilitas': """
-                SELECT mh.*, l.nama_provinsi 
-                FROM MOBILITAS_HARIAN mh 
-                JOIN LOKASI l ON mh.iso_code = l.iso_code
-                ORDER BY mh.tanggal DESC
             """
         }
         
@@ -311,9 +289,7 @@ def load_all_data():
         # Load aggregated views (with error handling)
         additional_views = {
             'kapasitas_kesehatan': "SELECT * FROM kapasitas_kesehatan_provinsi",
-            'vaksinasi_terkini': "SELECT * FROM vaksinasi_terkini", 
-            'cluster_aktif': "SELECT * FROM cluster_aktif",
-            'dampak_ekonomi': "SELECT * FROM dampak_ekonomi_terkini"
+            'vaksinasi_terkini': "SELECT * FROM vaksinasi_terkini"
         }
         
         for view_name, query in additional_views.items():
